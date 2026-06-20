@@ -1,44 +1,53 @@
+import { Mastra } from '@mastra/core';
 
-import { Mastra } from '@mastra/core/mastra';
-import { PinoLogger } from '@mastra/loggers';
-import { LibSQLStore } from '@mastra/libsql';
-import { DuckDBStore } from "@mastra/duckdb";
-import { MastraCompositeStore } from '@mastra/core/storage';
-import { Observability, MastraStorageExporter, MastraPlatformExporter, SensitiveDataFilter } from '@mastra/observability';
-import { weatherWorkflow } from './workflows/weather-workflow';
-import { weatherAgent } from './agents/weather-agent';
-import { toolCallAppropriatenessScorer, completenessScorer, translationScorer } from './scorers/weather-scorer';
+import { languageVariantAgent } from './agents/languageVariantAgent';
+import { generateNormalProblemVariantsWorkflow } from './workflows/generateNormalProblemVariants.workflow';
+import { mathInvariantAgent } from './agents/mathInvariantAgent';
+import { registerEvaluatorAgent } from './agents/registerEvaluatorAgent';
+import { readabilityMetricsTool } from './tools/readabilityMetrics.tool';
+import { readabilityTargetTool } from './tools/readabilityTarget.tool';
+//
+//
+import { generateBinomialProblemVariantsWorkflow } from './workflows/generateBinomialProblemVariants.workflow';
+
+import { generateNormalApproximationBinomialProblemVariantsWorkflow } from './workflows/generateNormalApproximationBinomialProblemVariants.workflow';
+
+import { generateCentralLimitTheoremProblemVariantsWorkflow } from './workflows/generateCentralLimitTheoremProblemVariants.workflow';
+
+import { generateConfidenceIntervalMeanKnownVarianceProblemVariantsWorkflow } from './workflows/generateConfidenceIntervalMeanKnownVarianceProblemVariants.workflow';
+
+import { generateConfidenceIntervalMeanUnknownVarianceProblemVariantsWorkflow } from './workflows/generateConfidenceIntervalMeanUnknownVarianceProblemVariants.workflow';
+
+import { generateConfidenceIntervalProportionProblemVariantsWorkflow } from './workflows/generateConfidenceIntervalProportionProblemVariants.workflow';
+
+import { generateHypothesisTestMeanKnownVarianceProblemVariantsWorkflow } from './workflows/generateHypothesisTestMeanKnownVarianceProblemVariants.workflow';
+
+import { generateHypothesisTestMeanUnknownVarianceProblemVariantsWorkflow } from './workflows/generateHypothesisTestMeanUnknownVarianceProblemVariants.workflow';
+
+import { generateHypothesisTestProportionProblemVariantsWorkflow } from './workflows/generateHypothesisTestProportionProblemVariants.workflow';
 
 export const mastra = new Mastra({
-  workflows: { weatherWorkflow },
-  agents: { weatherAgent },
-  scorers: { toolCallAppropriatenessScorer, completenessScorer, translationScorer },
-  storage: new MastraCompositeStore({
-    id: 'composite-storage',
-    default: new LibSQLStore({
-      id: "mastra-storage",
-      url: "file:./mastra.db",
-    }),
-    domains: {
-      observability: await new DuckDBStore().getStore('observability'),
-    }
-  }),
-  logger: new PinoLogger({
-    name: 'Mastra',
-    level: 'info',
-  }),
-  observability: new Observability({
-    configs: {
-      default: {
-        serviceName: 'mastra',
-        exporters: [
-          new MastraStorageExporter(), // Persists observability events to Mastra Storage
-          new MastraPlatformExporter(), // Sends observability events to Mastra Platform (if MASTRA_PLATFORM_ACCESS_TOKEN is set)
-        ],
-        spanOutputProcessors: [
-          new SensitiveDataFilter(), // Redacts sensitive data like passwords, tokens, keys
-        ],
-      },
-    },
-  }),
+  agents: {
+    languageVariantAgent,
+    mathInvariantAgent,
+    registerEvaluatorAgent,
+  },
+
+  workflows: {
+    generateNormalProblemVariantsWorkflow,
+    generateBinomialProblemVariantsWorkflow,
+    generateNormalApproximationBinomialProblemVariantsWorkflow,
+    generateCentralLimitTheoremProblemVariantsWorkflow,
+    generateConfidenceIntervalMeanKnownVarianceProblemVariantsWorkflow,
+    generateConfidenceIntervalMeanUnknownVarianceProblemVariantsWorkflow,
+    generateConfidenceIntervalProportionProblemVariantsWorkflow,
+    generateHypothesisTestMeanKnownVarianceProblemVariantsWorkflow,
+    generateHypothesisTestMeanUnknownVarianceProblemVariantsWorkflow,
+    generateHypothesisTestProportionProblemVariantsWorkflow,
+  },
+  tools: {
+    readabilityMetricsTool,
+    readabilityTargetTool,
+    // normalDistributionSolutionTool,
+  },
 });

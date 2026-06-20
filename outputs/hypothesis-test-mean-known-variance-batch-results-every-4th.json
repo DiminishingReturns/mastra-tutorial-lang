@@ -1,0 +1,3076 @@
+[
+  {
+    "id": "ht-mean-known-variance-battery-life-left-tailed-alpha-0.05",
+    "topic": "hypothesis-test-mean-known-variance",
+    "subtopic": "left-tailed",
+    "canonicalProblem": {
+      "id": "ht-mean-known-variance-battery-life-left-tailed-alpha-0.05",
+      "topic": "hypothesis-test-mean-known-variance",
+      "subtopic": "left-tailed",
+      "context": {
+        "setting": "battery performance testing",
+        "individualDescription": "one fully charged battery of a particular model",
+        "variableDescription": "battery life",
+        "unit": "hours",
+        "tone": "technical product-testing context",
+        "variationProfile": {
+          "openingStyle": "product testing scenario",
+          "toneGuidance": "Use practical technical language without making the context overly advanced.",
+          "vocabularySuggestions": [
+            "battery life",
+            "manufacturer claim",
+            "sample mean",
+            "population standard deviation",
+            "hypothesis test"
+          ],
+          "seedPhraseInContext": "A testing lab studies the battery life of a particular battery model.",
+          "avoidPhrases": [
+            "battery disaster",
+            "power drama"
+          ],
+          "contextDetails": [
+            "Each observation is the battery life of one fully charged battery.",
+            "The population standard deviation is known.",
+            "The goal is to test a claim about the true mean battery life."
+          ]
+        }
+      },
+      "parameter": {
+        "symbol": "mu",
+        "description": "the true mean battery life for this battery model"
+      },
+      "nullHypothesis": {
+        "parameterSymbol": "mu",
+        "claimedValue": 10,
+        "operator": "="
+      },
+      "alternativeHypothesis": {
+        "parameterSymbol": "mu",
+        "operator": "<",
+        "direction": "left"
+      },
+      "populationStandardDeviation": {
+        "symbol": "sigma",
+        "value": 1.2,
+        "unit": "hours",
+        "known": true
+      },
+      "sample": {
+        "sampleSize": 36,
+        "sampleMean": 9.4
+      },
+      "question": {
+        "type": "left-tailed",
+        "significanceLevel": 0.05
+      },
+      "method": {
+        "testFamily": "z",
+        "testStatisticFormula": "(x-bar - mu0) / (sigma / sqrt(n))",
+        "standardErrorFormula": "sigma / sqrt(n)",
+        "pValueDirection": "left-tail"
+      },
+      "learningGoals": [
+        "Identify the population mean as the parameter being tested.",
+        "State null and alternative hypotheses for a claim about a population mean.",
+        "Distinguish left-tailed, right-tailed, and two-tailed tests.",
+        "Recognize that a z test is appropriate when the population standard deviation is known.",
+        "Calculate the P-value of the test statistic using the correct tail(s) based on the alternative hypothesis.",
+        "Make a decision about the null hypothesis based on the significance level and p-value.",
+        "Use the sample mean, known population standard deviation, and sample size to conduct the test.",
+        "Interpret the decision and conclusion in context."
+      ],
+      "invariantFacts": [
+        "The parameter is the true mean battery life for this battery model.",
+        "The null claim value is 10 hours.",
+        "The null hypothesis is mu = 10.",
+        "The alternative hypothesis is mu < 10.",
+        "The population standard deviation is known and equals 1.2 hours.",
+        "The sample size is 36.",
+        "The sample mean is 9.4 hours.",
+        "The significance level is 0.05.",
+        "The method uses a z test because the population standard deviation is known.",
+        "The p-value direction is left-tail.",
+        "The question asks students to test whether the true mean battery life for this battery model is less than 10 hours."
+      ],
+      "requiredTasks": [
+        "Identify the population mean being tested.",
+        "State the null hypothesis.",
+        "State the alternative hypothesis.",
+        "Identify the known population standard deviation.",
+        "Identify the sample mean.",
+        "Identify the sample size.",
+        "Identify the significance level.",
+        "Use a z test statistic.",
+        "Calculate the p-value using the correct tail direction.",
+        "Make a decision about the null hypothesis.",
+        "Write a conclusion in context.",
+        "Use a left-tailed alternative hypothesis."
+      ]
+    },
+    "output": {
+      "status": "success",
+      "steps": {
+        "input": {
+          "id": "ht-mean-known-variance-battery-life-left-tailed-alpha-0.05",
+          "topic": "hypothesis-test-mean-known-variance",
+          "subtopic": "left-tailed",
+          "context": {
+            "setting": "battery performance testing",
+            "individualDescription": "one fully charged battery of a particular model",
+            "variableDescription": "battery life",
+            "unit": "hours",
+            "tone": "technical product-testing context",
+            "variationProfile": {
+              "openingStyle": "product testing scenario",
+              "toneGuidance": "Use practical technical language without making the context overly advanced.",
+              "vocabularySuggestions": [
+                "battery life",
+                "manufacturer claim",
+                "sample mean",
+                "population standard deviation",
+                "hypothesis test"
+              ],
+              "seedPhraseInContext": "A testing lab studies the battery life of a particular battery model.",
+              "avoidPhrases": [
+                "battery disaster",
+                "power drama"
+              ],
+              "contextDetails": [
+                "Each observation is the battery life of one fully charged battery.",
+                "The population standard deviation is known.",
+                "The goal is to test a claim about the true mean battery life."
+              ]
+            }
+          },
+          "parameter": {
+            "symbol": "mu",
+            "description": "the true mean battery life for this battery model"
+          },
+          "nullHypothesis": {
+            "parameterSymbol": "mu",
+            "claimedValue": 10,
+            "operator": "="
+          },
+          "alternativeHypothesis": {
+            "parameterSymbol": "mu",
+            "operator": "<",
+            "direction": "left"
+          },
+          "populationStandardDeviation": {
+            "symbol": "sigma",
+            "value": 1.2,
+            "unit": "hours",
+            "known": true
+          },
+          "sample": {
+            "sampleSize": 36,
+            "sampleMean": 9.4
+          },
+          "question": {
+            "type": "left-tailed",
+            "significanceLevel": 0.05
+          },
+          "method": {
+            "testFamily": "z",
+            "testStatisticFormula": "(x-bar - mu0) / (sigma / sqrt(n))",
+            "standardErrorFormula": "sigma / sqrt(n)",
+            "pValueDirection": "left-tail"
+          },
+          "learningGoals": [
+            "Identify the population mean as the parameter being tested.",
+            "State null and alternative hypotheses for a claim about a population mean.",
+            "Distinguish left-tailed, right-tailed, and two-tailed tests.",
+            "Recognize that a z test is appropriate when the population standard deviation is known.",
+            "Calculate the P-value of the test statistic using the correct tail(s) based on the alternative hypothesis.",
+            "Make a decision about the null hypothesis based on the significance level and p-value.",
+            "Use the sample mean, known population standard deviation, and sample size to conduct the test.",
+            "Interpret the decision and conclusion in context."
+          ],
+          "invariantFacts": [
+            "The parameter is the true mean battery life for this battery model.",
+            "The null claim value is 10 hours.",
+            "The null hypothesis is mu = 10.",
+            "The alternative hypothesis is mu < 10.",
+            "The population standard deviation is known and equals 1.2 hours.",
+            "The sample size is 36.",
+            "The sample mean is 9.4 hours.",
+            "The significance level is 0.05.",
+            "The method uses a z test because the population standard deviation is known.",
+            "The p-value direction is left-tail.",
+            "The question asks students to test whether the true mean battery life for this battery model is less than 10 hours."
+          ],
+          "requiredTasks": [
+            "Identify the population mean being tested.",
+            "State the null hypothesis.",
+            "State the alternative hypothesis.",
+            "Identify the known population standard deviation.",
+            "Identify the sample mean.",
+            "Identify the sample size.",
+            "Identify the significance level.",
+            "Use a z test statistic.",
+            "Calculate the p-value using the correct tail direction.",
+            "Make a decision about the null hypothesis.",
+            "Write a conclusion in context.",
+            "Use a left-tailed alternative hypothesis."
+          ]
+        },
+        "generate-hypothesis-test-mean-known-variance-language-variants": {
+          "startedAt": 1781743970978,
+          "status": "success",
+          "output": {
+            "canonicalProblem": {
+              "id": "ht-mean-known-variance-battery-life-left-tailed-alpha-0.05",
+              "topic": "hypothesis-test-mean-known-variance",
+              "subtopic": "left-tailed",
+              "context": {
+                "setting": "battery performance testing",
+                "individualDescription": "one fully charged battery of a particular model",
+                "variableDescription": "battery life",
+                "unit": "hours",
+                "tone": "technical product-testing context",
+                "variationProfile": {
+                  "openingStyle": "product testing scenario",
+                  "toneGuidance": "Use practical technical language without making the context overly advanced.",
+                  "vocabularySuggestions": [
+                    "battery life",
+                    "manufacturer claim",
+                    "sample mean",
+                    "population standard deviation",
+                    "hypothesis test"
+                  ],
+                  "seedPhraseInContext": "A testing lab studies the battery life of a particular battery model.",
+                  "avoidPhrases": [
+                    "battery disaster",
+                    "power drama"
+                  ],
+                  "contextDetails": [
+                    "Each observation is the battery life of one fully charged battery.",
+                    "The population standard deviation is known.",
+                    "The goal is to test a claim about the true mean battery life."
+                  ]
+                }
+              },
+              "parameter": {
+                "symbol": "mu",
+                "description": "the true mean battery life for this battery model"
+              },
+              "nullHypothesis": {
+                "parameterSymbol": "mu",
+                "claimedValue": 10,
+                "operator": "="
+              },
+              "alternativeHypothesis": {
+                "parameterSymbol": "mu",
+                "operator": "<",
+                "direction": "left"
+              },
+              "populationStandardDeviation": {
+                "symbol": "sigma",
+                "value": 1.2,
+                "unit": "hours",
+                "known": true
+              },
+              "sample": {
+                "sampleSize": 36,
+                "sampleMean": 9.4
+              },
+              "question": {
+                "type": "left-tailed",
+                "significanceLevel": 0.05
+              },
+              "method": {
+                "testFamily": "z",
+                "testStatisticFormula": "(x-bar - mu0) / (sigma / sqrt(n))",
+                "standardErrorFormula": "sigma / sqrt(n)",
+                "pValueDirection": "left-tail"
+              },
+              "learningGoals": [
+                "Identify the population mean as the parameter being tested.",
+                "State null and alternative hypotheses for a claim about a population mean.",
+                "Distinguish left-tailed, right-tailed, and two-tailed tests.",
+                "Recognize that a z test is appropriate when the population standard deviation is known.",
+                "Calculate the P-value of the test statistic using the correct tail(s) based on the alternative hypothesis.",
+                "Make a decision about the null hypothesis based on the significance level and p-value.",
+                "Use the sample mean, known population standard deviation, and sample size to conduct the test.",
+                "Interpret the decision and conclusion in context."
+              ],
+              "invariantFacts": [
+                "The parameter is the true mean battery life for this battery model.",
+                "The null claim value is 10 hours.",
+                "The null hypothesis is mu = 10.",
+                "The alternative hypothesis is mu < 10.",
+                "The population standard deviation is known and equals 1.2 hours.",
+                "The sample size is 36.",
+                "The sample mean is 9.4 hours.",
+                "The significance level is 0.05.",
+                "The method uses a z test because the population standard deviation is known.",
+                "The p-value direction is left-tail.",
+                "The question asks students to test whether the true mean battery life for this battery model is less than 10 hours."
+              ],
+              "requiredTasks": [
+                "Identify the population mean being tested.",
+                "State the null hypothesis.",
+                "State the alternative hypothesis.",
+                "Identify the known population standard deviation.",
+                "Identify the sample mean.",
+                "Identify the sample size.",
+                "Identify the significance level.",
+                "Use a z test statistic.",
+                "Calculate the p-value using the correct tail direction.",
+                "Make a decision about the null hypothesis.",
+                "Write a conclusion in context.",
+                "Use a left-tailed alternative hypothesis."
+              ]
+            },
+            "variants": {
+              "beginner": {
+                "problemText": "A testing lab studies battery life for one battery model. Each observation is one fully charged battery. The measured variable is battery life in hours.\n\nThe manufacturer claims the true average battery life is 10 hours. In statistics, this true average is the population mean. The lab wants to test whether the population mean is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. The lab tests a sample of 36 batteries. The sample mean battery life is 9.4 hours. Use the 0.05 significance level.\n\nBecause the population standard deviation is known, use a z test for the population mean. State the null and alternative claims in words. Calculate the p-value, make a decision about the null claim, and write a conclusion in the battery-testing context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the left-tailed alternative direction clearly in words.",
+                  "Lists the sample size, sample mean, known population standard deviation, and significance level in simple separate statements.",
+                  "Explicitly names the z test because the population standard deviation is known, supporting beginner recognition of the method."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A testing lab studies the battery life of a particular battery model. Each observation is the battery life, in hours, of one fully charged battery. The manufacturer’s claim is that the population mean battery life is 10 hours, and the lab wants to test whether the true mean battery life is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. A random sample of 36 batteries has a sample mean battery life of 9.4 hours. At the 0.05 significance level, conduct the hypothesis test. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics terms such as population mean, sample mean, population standard deviation, significance level, p-value, and null hypothesis.",
+                  "Avoids Greek-letter notation and symbolic hypotheses, expressing all quantities in words.",
+                  "Does not explicitly prompt students to use a z test; the known population standard deviation indicates the appropriate method.",
+                  "Keeps the left-tailed alternative intact by stating that the true mean battery life is less than 10 hours."
+                ]
+              },
+              "advanced": {
+                "problemText": "In a battery performance study, a testing lab evaluates evidence against the target mean battery life of 10 hours for a particular battery model. Battery life is measured in hours for fully charged batteries, and the inferential question is whether the population mean battery life is less than 10 hours.\n\nAssume the population standard deviation is known to be 1.2 hours. For a sample of 36 batteries, the sample mean battery life is 9.4 hours. At the stated significance level of 0.05, formulate the null and alternative claims, compute the p-value for the left-tailed test, decide how the sample evidence bears on the null claim, and draw a conclusion in the product-testing context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by referring to evidence against the target mean before listing the data.",
+                  "Uses compact statistical phrasing such as “target mean,” “inferential question,” and “sample evidence.”",
+                  "Avoids Greek-letter notation and symbolic hypotheses while preserving all numerical details.",
+                  "Signals the one-sample z-test setting through the known population standard deviation without turning the prompt into a worked example."
+                ]
+              }
+            }
+          },
+          "endedAt": 1781743993614
+        },
+        "validate-hypothesis-test-mean-known-variance-math-invariants": {
+          "startedAt": 1781743993614,
+          "status": "success",
+          "output": {
+            "variants": {
+              "beginner": {
+                "problemText": "A testing lab studies battery life for one battery model. Each observation is one fully charged battery. The measured variable is battery life in hours.\n\nThe manufacturer claims the true average battery life is 10 hours. In statistics, this true average is the population mean. The lab wants to test whether the population mean is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. The lab tests a sample of 36 batteries. The sample mean battery life is 9.4 hours. Use the 0.05 significance level.\n\nBecause the population standard deviation is known, use a z test for the population mean. State the null and alternative claims in words. Calculate the p-value, make a decision about the null claim, and write a conclusion in the battery-testing context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the left-tailed alternative direction clearly in words.",
+                  "Lists the sample size, sample mean, known population standard deviation, and significance level in simple separate statements.",
+                  "Explicitly names the z test because the population standard deviation is known, supporting beginner recognition of the method."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A testing lab studies the battery life of a particular battery model. Each observation is the battery life, in hours, of one fully charged battery. The manufacturer’s claim is that the population mean battery life is 10 hours, and the lab wants to test whether the true mean battery life is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. A random sample of 36 batteries has a sample mean battery life of 9.4 hours. At the 0.05 significance level, conduct the hypothesis test. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics terms such as population mean, sample mean, population standard deviation, significance level, p-value, and null hypothesis.",
+                  "Avoids Greek-letter notation and symbolic hypotheses, expressing all quantities in words.",
+                  "Does not explicitly prompt students to use a z test; the known population standard deviation indicates the appropriate method.",
+                  "Keeps the left-tailed alternative intact by stating that the true mean battery life is less than 10 hours."
+                ]
+              },
+              "advanced": {
+                "problemText": "In a battery performance study, a testing lab evaluates evidence against the target mean battery life of 10 hours for a particular battery model. Battery life is measured in hours for fully charged batteries, and the inferential question is whether the population mean battery life is less than 10 hours.\n\nAssume the population standard deviation is known to be 1.2 hours. For a sample of 36 batteries, the sample mean battery life is 9.4 hours. At the stated significance level of 0.05, formulate the null and alternative claims, compute the p-value for the left-tailed test, decide how the sample evidence bears on the null claim, and draw a conclusion in the product-testing context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by referring to evidence against the target mean before listing the data.",
+                  "Uses compact statistical phrasing such as “target mean,” “inferential question,” and “sample evidence.”",
+                  "Avoids Greek-letter notation and symbolic hypotheses while preserving all numerical details.",
+                  "Signals the one-sample z-test setting through the known population standard deviation without turning the prompt into a worked example."
+                ]
+              }
+            },
+            "mathValidation": {
+              "beginner": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "intermediate": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "advanced": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              }
+            }
+          },
+          "endedAt": 1781744001584
+        },
+        "evaluate-hypothesis-test-mean-known-variance-register": {
+          "startedAt": 1781744001584,
+          "status": "success",
+          "output": {
+            "variants": {
+              "beginner": {
+                "problemText": "A testing lab studies battery life for one battery model. Each observation is one fully charged battery. The measured variable is battery life in hours.\n\nThe manufacturer claims the true average battery life is 10 hours. In statistics, this true average is the population mean. The lab wants to test whether the population mean is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. The lab tests a sample of 36 batteries. The sample mean battery life is 9.4 hours. Use the 0.05 significance level.\n\nBecause the population standard deviation is known, use a z test for the population mean. State the null and alternative claims in words. Calculate the p-value, make a decision about the null claim, and write a conclusion in the battery-testing context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the left-tailed alternative direction clearly in words.",
+                  "Lists the sample size, sample mean, known population standard deviation, and significance level in simple separate statements.",
+                  "Explicitly names the z test because the population standard deviation is known, supporting beginner recognition of the method."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A testing lab studies the battery life of a particular battery model. Each observation is the battery life, in hours, of one fully charged battery. The manufacturer’s claim is that the population mean battery life is 10 hours, and the lab wants to test whether the true mean battery life is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. A random sample of 36 batteries has a sample mean battery life of 9.4 hours. At the 0.05 significance level, conduct the hypothesis test. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics terms such as population mean, sample mean, population standard deviation, significance level, p-value, and null hypothesis.",
+                  "Avoids Greek-letter notation and symbolic hypotheses, expressing all quantities in words.",
+                  "Does not explicitly prompt students to use a z test; the known population standard deviation indicates the appropriate method.",
+                  "Keeps the left-tailed alternative intact by stating that the true mean battery life is less than 10 hours."
+                ]
+              },
+              "advanced": {
+                "problemText": "In a battery performance study, a testing lab evaluates evidence against the target mean battery life of 10 hours for a particular battery model. Battery life is measured in hours for fully charged batteries, and the inferential question is whether the population mean battery life is less than 10 hours.\n\nAssume the population standard deviation is known to be 1.2 hours. For a sample of 36 batteries, the sample mean battery life is 9.4 hours. At the stated significance level of 0.05, formulate the null and alternative claims, compute the p-value for the left-tailed test, decide how the sample evidence bears on the null claim, and draw a conclusion in the product-testing context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by referring to evidence against the target mean before listing the data.",
+                  "Uses compact statistical phrasing such as “target mean,” “inferential question,” and “sample evidence.”",
+                  "Avoids Greek-letter notation and symbolic hypotheses while preserving all numerical details.",
+                  "Signals the one-sample z-test setting through the known population standard deviation without turning the prompt into a worked example."
+                ]
+              }
+            },
+            "mathValidation": {
+              "beginner": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "intermediate": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "advanced": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              }
+            },
+            "registerEvaluation": {
+              "beginner": {
+                "targetLevel": "beginner",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 2,
+                  "syntacticComplexity": 2,
+                  "mathematicalExplicitness": 2,
+                  "register": 2,
+                  "referentialCohesion": 2,
+                  "conceptualDensity": 2
+                },
+                "strengths": [
+                  "Uses clear instructional language with short, direct sentences.",
+                  "Introduces essential statistical vocabulary with accessible wording, such as explaining “true average” before “population mean.”",
+                  "Repeats key nouns like “battery life,” “population mean,” and “lab,” which supports clarity for beginners.",
+                  "Separates the context, data, and task instructions in a way that reduces cognitive load."
+                ],
+                "concerns": [
+                  "The final sentence contains several tasks in one sentence, which is slightly dense for a beginner version.",
+                  "Terms such as “null,” “alternative,” “p-value,” and “significance level” are necessary but still add some technical load."
+                ],
+                "revisionAdvice": [
+                  "Consider breaking the final task sentence into a short numbered or sentence-by-sentence list for stronger beginner accessibility.",
+                  "Keep the explanatory phrasing because it appropriately supports the target level."
+                ]
+              },
+              "intermediate": {
+                "targetLevel": "intermediate",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 3,
+                  "syntacticComplexity": 3,
+                  "mathematicalExplicitness": 3,
+                  "register": 3,
+                  "referentialCohesion": 3,
+                  "conceptualDensity": 3
+                },
+                "strengths": [
+                  "Uses standard college statistics textbook language.",
+                  "Integrates quantities naturally into paragraph form while preserving clarity.",
+                  "Includes appropriate statistical vocabulary such as “population mean,” “sample mean,” “population standard deviation,” “significance level,” and “hypothesis test.”",
+                  "The sentence structure is moderately complex but still readable."
+                ],
+                "concerns": [
+                  "The first paragraph has a fairly long sentence that combines the manufacturer’s claim and the lab’s testing goal.",
+                  "The version remains fairly explicit and accessible, so it sits at the lower-to-middle range of intermediate rather than a high intermediate register."
+                ],
+                "revisionAdvice": [
+                  "No major revision is needed for the target level.",
+                  "If a slightly stronger intermediate register is desired, the hypotheses could be referenced more compactly without adding unnecessary difficulty."
+                ]
+              },
+              "advanced": {
+                "targetLevel": "advanced",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 4,
+                  "syntacticComplexity": 4,
+                  "mathematicalExplicitness": 4,
+                  "register": 4,
+                  "referentialCohesion": 4,
+                  "conceptualDensity": 4
+                },
+                "strengths": [
+                  "Uses authentic academic/statistical phrasing such as “evaluates evidence,” “inferential question,” “sample evidence,” and “left-tailed test.”",
+                  "Presents the assumptions and task in a compact, discipline-appropriate way.",
+                  "The register is more formal and conceptually dense than the intermediate version without becoming obscure.",
+                  "Maintains clarity while using more advanced nominal and inferential phrasing."
+                ],
+                "concerns": [
+                  "The phrase “target mean battery life” is appropriate but slightly less conventional than “claimed mean” or “specified mean” in some textbook contexts.",
+                  "The advanced version is clearly denser than the intermediate version, though it remains relatively accessible rather than strongly C1-level academic prose."
+                ],
+                "revisionAdvice": [
+                  "No major revision is needed.",
+                  "For a more distinctly advanced statistical register, the wording could include slightly more formal hypothesis-testing terminology, but the current version appropriately avoids artificial obscurity."
+                ]
+              },
+              "overallProgression": {
+                "passes": true,
+                "notes": [
+                  "The three versions show a clear progression in lexical difficulty, sentence structure, register, and conceptual density.",
+                  "The beginner version is explanatory and instructional; the intermediate version resembles a standard college statistics problem; the advanced version uses more compact academic statistical language.",
+                  "All versions preserve clarity and coherence while increasing linguistic sophistication across levels.",
+                  "The progression is effective, though the intermediate and advanced versions remain close enough that the advanced version could be made slightly more formally academic if a stronger contrast were desired."
+                ]
+              }
+            }
+          },
+          "endedAt": 1781744018925
+        },
+        "compute-hypothesis-test-mean-known-variance-readability-metrics": {
+          "startedAt": 1781744018925,
+          "status": "success",
+          "output": {
+            "variants": {
+              "beginner": {
+                "problemText": "A testing lab studies battery life for one battery model. Each observation is one fully charged battery. The measured variable is battery life in hours.\n\nThe manufacturer claims the true average battery life is 10 hours. In statistics, this true average is the population mean. The lab wants to test whether the population mean is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. The lab tests a sample of 36 batteries. The sample mean battery life is 9.4 hours. Use the 0.05 significance level.\n\nBecause the population standard deviation is known, use a z test for the population mean. State the null and alternative claims in words. Calculate the p-value, make a decision about the null claim, and write a conclusion in the battery-testing context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the left-tailed alternative direction clearly in words.",
+                  "Lists the sample size, sample mean, known population standard deviation, and significance level in simple separate statements.",
+                  "Explicitly names the z test because the population standard deviation is known, supporting beginner recognition of the method."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A testing lab studies the battery life of a particular battery model. Each observation is the battery life, in hours, of one fully charged battery. The manufacturer’s claim is that the population mean battery life is 10 hours, and the lab wants to test whether the true mean battery life is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. A random sample of 36 batteries has a sample mean battery life of 9.4 hours. At the 0.05 significance level, conduct the hypothesis test. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics terms such as population mean, sample mean, population standard deviation, significance level, p-value, and null hypothesis.",
+                  "Avoids Greek-letter notation and symbolic hypotheses, expressing all quantities in words.",
+                  "Does not explicitly prompt students to use a z test; the known population standard deviation indicates the appropriate method.",
+                  "Keeps the left-tailed alternative intact by stating that the true mean battery life is less than 10 hours."
+                ]
+              },
+              "advanced": {
+                "problemText": "In a battery performance study, a testing lab evaluates evidence against the target mean battery life of 10 hours for a particular battery model. Battery life is measured in hours for fully charged batteries, and the inferential question is whether the population mean battery life is less than 10 hours.\n\nAssume the population standard deviation is known to be 1.2 hours. For a sample of 36 batteries, the sample mean battery life is 9.4 hours. At the stated significance level of 0.05, formulate the null and alternative claims, compute the p-value for the left-tailed test, decide how the sample evidence bears on the null claim, and draw a conclusion in the product-testing context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by referring to evidence against the target mean before listing the data.",
+                  "Uses compact statistical phrasing such as “target mean,” “inferential question,” and “sample evidence.”",
+                  "Avoids Greek-letter notation and symbolic hypotheses while preserving all numerical details.",
+                  "Signals the one-sample z-test setting through the known population standard deviation without turning the prompt into a worked example."
+                ]
+              }
+            },
+            "mathValidation": {
+              "beginner": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "intermediate": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "advanced": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              }
+            },
+            "registerEvaluation": {
+              "beginner": {
+                "targetLevel": "beginner",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 2,
+                  "syntacticComplexity": 2,
+                  "mathematicalExplicitness": 2,
+                  "register": 2,
+                  "referentialCohesion": 2,
+                  "conceptualDensity": 2
+                },
+                "strengths": [
+                  "Uses clear instructional language with short, direct sentences.",
+                  "Introduces essential statistical vocabulary with accessible wording, such as explaining “true average” before “population mean.”",
+                  "Repeats key nouns like “battery life,” “population mean,” and “lab,” which supports clarity for beginners.",
+                  "Separates the context, data, and task instructions in a way that reduces cognitive load."
+                ],
+                "concerns": [
+                  "The final sentence contains several tasks in one sentence, which is slightly dense for a beginner version.",
+                  "Terms such as “null,” “alternative,” “p-value,” and “significance level” are necessary but still add some technical load."
+                ],
+                "revisionAdvice": [
+                  "Consider breaking the final task sentence into a short numbered or sentence-by-sentence list for stronger beginner accessibility.",
+                  "Keep the explanatory phrasing because it appropriately supports the target level."
+                ]
+              },
+              "intermediate": {
+                "targetLevel": "intermediate",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 3,
+                  "syntacticComplexity": 3,
+                  "mathematicalExplicitness": 3,
+                  "register": 3,
+                  "referentialCohesion": 3,
+                  "conceptualDensity": 3
+                },
+                "strengths": [
+                  "Uses standard college statistics textbook language.",
+                  "Integrates quantities naturally into paragraph form while preserving clarity.",
+                  "Includes appropriate statistical vocabulary such as “population mean,” “sample mean,” “population standard deviation,” “significance level,” and “hypothesis test.”",
+                  "The sentence structure is moderately complex but still readable."
+                ],
+                "concerns": [
+                  "The first paragraph has a fairly long sentence that combines the manufacturer’s claim and the lab’s testing goal.",
+                  "The version remains fairly explicit and accessible, so it sits at the lower-to-middle range of intermediate rather than a high intermediate register."
+                ],
+                "revisionAdvice": [
+                  "No major revision is needed for the target level.",
+                  "If a slightly stronger intermediate register is desired, the hypotheses could be referenced more compactly without adding unnecessary difficulty."
+                ]
+              },
+              "advanced": {
+                "targetLevel": "advanced",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 4,
+                  "syntacticComplexity": 4,
+                  "mathematicalExplicitness": 4,
+                  "register": 4,
+                  "referentialCohesion": 4,
+                  "conceptualDensity": 4
+                },
+                "strengths": [
+                  "Uses authentic academic/statistical phrasing such as “evaluates evidence,” “inferential question,” “sample evidence,” and “left-tailed test.”",
+                  "Presents the assumptions and task in a compact, discipline-appropriate way.",
+                  "The register is more formal and conceptually dense than the intermediate version without becoming obscure.",
+                  "Maintains clarity while using more advanced nominal and inferential phrasing."
+                ],
+                "concerns": [
+                  "The phrase “target mean battery life” is appropriate but slightly less conventional than “claimed mean” or “specified mean” in some textbook contexts.",
+                  "The advanced version is clearly denser than the intermediate version, though it remains relatively accessible rather than strongly C1-level academic prose."
+                ],
+                "revisionAdvice": [
+                  "No major revision is needed.",
+                  "For a more distinctly advanced statistical register, the wording could include slightly more formal hypothesis-testing terminology, but the current version appropriately avoids artificial obscurity."
+                ]
+              },
+              "overallProgression": {
+                "passes": true,
+                "notes": [
+                  "The three versions show a clear progression in lexical difficulty, sentence structure, register, and conceptual density.",
+                  "The beginner version is explanatory and instructional; the intermediate version resembles a standard college statistics problem; the advanced version uses more compact academic statistical language.",
+                  "All versions preserve clarity and coherence while increasing linguistic sophistication across levels.",
+                  "The progression is effective, though the intermediate and advanced versions remain close enough that the advanced version could be made slightly more formally academic if a stronger contrast were desired."
+                ]
+              }
+            },
+            "readabilityMetrics": {
+              "beginner": {
+                "wordCount": 131,
+                "sentenceCount": 13,
+                "averageSentenceLength": 10.08,
+                "longestSentenceLength": 18,
+                "characterCount": 649,
+                "syllableCount": 202,
+                "fleschReadingEase": 66.16,
+                "fleschKincaidGrade": 6.54,
+                "technicalTermCount": 13,
+                "quantityCount": 6,
+                "notes": []
+              },
+              "intermediate": {
+                "wordCount": 114,
+                "sentenceCount": 7,
+                "averageSentenceLength": 16.29,
+                "longestSentenceLength": 31,
+                "characterCount": 549,
+                "syllableCount": 175,
+                "fleschReadingEase": 60.44,
+                "fleschKincaidGrade": 8.88,
+                "technicalTermCount": 8,
+                "quantityCount": 6,
+                "notes": [
+                  "At least one sentence is longer than 30 words."
+                ]
+              },
+              "advanced": {
+                "wordCount": 113,
+                "sentenceCount": 5,
+                "averageSentenceLength": 22.6,
+                "longestSentenceLength": 38,
+                "characterCount": 573,
+                "syllableCount": 179,
+                "fleschReadingEase": 49.88,
+                "fleschKincaidGrade": 11.92,
+                "technicalTermCount": 9,
+                "quantityCount": 6,
+                "notes": [
+                  "At least one sentence is longer than 30 words."
+                ]
+              }
+            }
+          },
+          "endedAt": 1781744018927
+        },
+        "assess-hypothesis-test-mean-known-variance-readability-targets": {
+          "startedAt": 1781744018929,
+          "status": "success",
+          "output": {
+            "variants": {
+              "beginner": {
+                "problemText": "A testing lab studies battery life for one battery model. Each observation is one fully charged battery. The measured variable is battery life in hours.\n\nThe manufacturer claims the true average battery life is 10 hours. In statistics, this true average is the population mean. The lab wants to test whether the population mean is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. The lab tests a sample of 36 batteries. The sample mean battery life is 9.4 hours. Use the 0.05 significance level.\n\nBecause the population standard deviation is known, use a z test for the population mean. State the null and alternative claims in words. Calculate the p-value, make a decision about the null claim, and write a conclusion in the battery-testing context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the left-tailed alternative direction clearly in words.",
+                  "Lists the sample size, sample mean, known population standard deviation, and significance level in simple separate statements.",
+                  "Explicitly names the z test because the population standard deviation is known, supporting beginner recognition of the method."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A testing lab studies the battery life of a particular battery model. Each observation is the battery life, in hours, of one fully charged battery. The manufacturer’s claim is that the population mean battery life is 10 hours, and the lab wants to test whether the true mean battery life is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. A random sample of 36 batteries has a sample mean battery life of 9.4 hours. At the 0.05 significance level, conduct the hypothesis test. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics terms such as population mean, sample mean, population standard deviation, significance level, p-value, and null hypothesis.",
+                  "Avoids Greek-letter notation and symbolic hypotheses, expressing all quantities in words.",
+                  "Does not explicitly prompt students to use a z test; the known population standard deviation indicates the appropriate method.",
+                  "Keeps the left-tailed alternative intact by stating that the true mean battery life is less than 10 hours."
+                ]
+              },
+              "advanced": {
+                "problemText": "In a battery performance study, a testing lab evaluates evidence against the target mean battery life of 10 hours for a particular battery model. Battery life is measured in hours for fully charged batteries, and the inferential question is whether the population mean battery life is less than 10 hours.\n\nAssume the population standard deviation is known to be 1.2 hours. For a sample of 36 batteries, the sample mean battery life is 9.4 hours. At the stated significance level of 0.05, formulate the null and alternative claims, compute the p-value for the left-tailed test, decide how the sample evidence bears on the null claim, and draw a conclusion in the product-testing context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by referring to evidence against the target mean before listing the data.",
+                  "Uses compact statistical phrasing such as “target mean,” “inferential question,” and “sample evidence.”",
+                  "Avoids Greek-letter notation and symbolic hypotheses while preserving all numerical details.",
+                  "Signals the one-sample z-test setting through the known population standard deviation without turning the prompt into a worked example."
+                ]
+              }
+            },
+            "mathValidation": {
+              "beginner": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "intermediate": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "advanced": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              }
+            },
+            "registerEvaluation": {
+              "beginner": {
+                "targetLevel": "beginner",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 2,
+                  "syntacticComplexity": 2,
+                  "mathematicalExplicitness": 2,
+                  "register": 2,
+                  "referentialCohesion": 2,
+                  "conceptualDensity": 2
+                },
+                "strengths": [
+                  "Uses clear instructional language with short, direct sentences.",
+                  "Introduces essential statistical vocabulary with accessible wording, such as explaining “true average” before “population mean.”",
+                  "Repeats key nouns like “battery life,” “population mean,” and “lab,” which supports clarity for beginners.",
+                  "Separates the context, data, and task instructions in a way that reduces cognitive load."
+                ],
+                "concerns": [
+                  "The final sentence contains several tasks in one sentence, which is slightly dense for a beginner version.",
+                  "Terms such as “null,” “alternative,” “p-value,” and “significance level” are necessary but still add some technical load."
+                ],
+                "revisionAdvice": [
+                  "Consider breaking the final task sentence into a short numbered or sentence-by-sentence list for stronger beginner accessibility.",
+                  "Keep the explanatory phrasing because it appropriately supports the target level."
+                ]
+              },
+              "intermediate": {
+                "targetLevel": "intermediate",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 3,
+                  "syntacticComplexity": 3,
+                  "mathematicalExplicitness": 3,
+                  "register": 3,
+                  "referentialCohesion": 3,
+                  "conceptualDensity": 3
+                },
+                "strengths": [
+                  "Uses standard college statistics textbook language.",
+                  "Integrates quantities naturally into paragraph form while preserving clarity.",
+                  "Includes appropriate statistical vocabulary such as “population mean,” “sample mean,” “population standard deviation,” “significance level,” and “hypothesis test.”",
+                  "The sentence structure is moderately complex but still readable."
+                ],
+                "concerns": [
+                  "The first paragraph has a fairly long sentence that combines the manufacturer’s claim and the lab’s testing goal.",
+                  "The version remains fairly explicit and accessible, so it sits at the lower-to-middle range of intermediate rather than a high intermediate register."
+                ],
+                "revisionAdvice": [
+                  "No major revision is needed for the target level.",
+                  "If a slightly stronger intermediate register is desired, the hypotheses could be referenced more compactly without adding unnecessary difficulty."
+                ]
+              },
+              "advanced": {
+                "targetLevel": "advanced",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 4,
+                  "syntacticComplexity": 4,
+                  "mathematicalExplicitness": 4,
+                  "register": 4,
+                  "referentialCohesion": 4,
+                  "conceptualDensity": 4
+                },
+                "strengths": [
+                  "Uses authentic academic/statistical phrasing such as “evaluates evidence,” “inferential question,” “sample evidence,” and “left-tailed test.”",
+                  "Presents the assumptions and task in a compact, discipline-appropriate way.",
+                  "The register is more formal and conceptually dense than the intermediate version without becoming obscure.",
+                  "Maintains clarity while using more advanced nominal and inferential phrasing."
+                ],
+                "concerns": [
+                  "The phrase “target mean battery life” is appropriate but slightly less conventional than “claimed mean” or “specified mean” in some textbook contexts.",
+                  "The advanced version is clearly denser than the intermediate version, though it remains relatively accessible rather than strongly C1-level academic prose."
+                ],
+                "revisionAdvice": [
+                  "No major revision is needed.",
+                  "For a more distinctly advanced statistical register, the wording could include slightly more formal hypothesis-testing terminology, but the current version appropriately avoids artificial obscurity."
+                ]
+              },
+              "overallProgression": {
+                "passes": true,
+                "notes": [
+                  "The three versions show a clear progression in lexical difficulty, sentence structure, register, and conceptual density.",
+                  "The beginner version is explanatory and instructional; the intermediate version resembles a standard college statistics problem; the advanced version uses more compact academic statistical language.",
+                  "All versions preserve clarity and coherence while increasing linguistic sophistication across levels.",
+                  "The progression is effective, though the intermediate and advanced versions remain close enough that the advanced version could be made slightly more formally academic if a stronger contrast were desired."
+                ]
+              }
+            },
+            "readabilityMetrics": {
+              "beginner": {
+                "wordCount": 131,
+                "sentenceCount": 13,
+                "averageSentenceLength": 10.08,
+                "longestSentenceLength": 18,
+                "characterCount": 649,
+                "syllableCount": 202,
+                "fleschReadingEase": 66.16,
+                "fleschKincaidGrade": 6.54,
+                "technicalTermCount": 13,
+                "quantityCount": 6,
+                "notes": []
+              },
+              "intermediate": {
+                "wordCount": 114,
+                "sentenceCount": 7,
+                "averageSentenceLength": 16.29,
+                "longestSentenceLength": 31,
+                "characterCount": 549,
+                "syllableCount": 175,
+                "fleschReadingEase": 60.44,
+                "fleschKincaidGrade": 8.88,
+                "technicalTermCount": 8,
+                "quantityCount": 6,
+                "notes": [
+                  "At least one sentence is longer than 30 words."
+                ]
+              },
+              "advanced": {
+                "wordCount": 113,
+                "sentenceCount": 5,
+                "averageSentenceLength": 22.6,
+                "longestSentenceLength": 38,
+                "characterCount": 573,
+                "syllableCount": 179,
+                "fleschReadingEase": 49.88,
+                "fleschKincaidGrade": 11.92,
+                "technicalTermCount": 9,
+                "quantityCount": 6,
+                "notes": [
+                  "At least one sentence is longer than 30 words."
+                ]
+              }
+            },
+            "readabilityTargetAssessment": {
+              "beginner": {
+                "targetLevel": "beginner",
+                "status": "warning",
+                "checks": {
+                  "averageSentenceLength": {
+                    "value": 10.08,
+                    "target": "6–18 words",
+                    "status": "passes"
+                  },
+                  "longestSentenceLength": {
+                    "value": 18,
+                    "target": "maximum 24 words",
+                    "status": "passes"
+                  },
+                  "fleschKincaidGrade": {
+                    "value": 6.54,
+                    "target": "0–8.5",
+                    "status": "passes"
+                  },
+                  "technicalTermCount": {
+                    "value": 13,
+                    "target": "0–11 terms",
+                    "status": "warning"
+                  }
+                },
+                "issues": [
+                  "beginner: technical term count is outside the target range."
+                ],
+                "notes": []
+              },
+              "intermediate": {
+                "targetLevel": "intermediate",
+                "status": "passes",
+                "checks": {
+                  "averageSentenceLength": {
+                    "value": 16.29,
+                    "target": "12–25 words",
+                    "status": "passes"
+                  },
+                  "longestSentenceLength": {
+                    "value": 31,
+                    "target": "maximum 32 words",
+                    "status": "passes"
+                  },
+                  "fleschKincaidGrade": {
+                    "value": 8.88,
+                    "target": "6.5–11.5",
+                    "status": "passes"
+                  },
+                  "technicalTermCount": {
+                    "value": 8,
+                    "target": "2–10 terms",
+                    "status": "passes"
+                  }
+                },
+                "issues": [],
+                "notes": [
+                  "At least one sentence is longer than 30 words.",
+                  "intermediate: readability metrics are within the target range."
+                ]
+              },
+              "advanced": {
+                "targetLevel": "advanced",
+                "status": "passes",
+                "checks": {
+                  "averageSentenceLength": {
+                    "value": 22.6,
+                    "target": "16–42 words",
+                    "status": "passes"
+                  },
+                  "longestSentenceLength": {
+                    "value": 38,
+                    "target": "maximum 60 words",
+                    "status": "passes"
+                  },
+                  "fleschKincaidGrade": {
+                    "value": 11.92,
+                    "target": "8.5–22",
+                    "status": "passes"
+                  },
+                  "technicalTermCount": {
+                    "value": 9,
+                    "target": "6–14 terms",
+                    "status": "passes"
+                  }
+                },
+                "issues": [],
+                "notes": [
+                  "At least one sentence is longer than 30 words.",
+                  "advanced: readability metrics are within the target range."
+                ]
+              },
+              "overallProgression": {
+                "status": "passes",
+                "issues": [],
+                "notes": [
+                  "The readability metrics show a reasonable progression across the three levels."
+                ]
+              }
+            }
+          },
+          "endedAt": 1781744018929
+        }
+      },
+      "input": {
+        "id": "ht-mean-known-variance-battery-life-left-tailed-alpha-0.05",
+        "topic": "hypothesis-test-mean-known-variance",
+        "subtopic": "left-tailed",
+        "context": {
+          "setting": "battery performance testing",
+          "individualDescription": "one fully charged battery of a particular model",
+          "variableDescription": "battery life",
+          "unit": "hours",
+          "tone": "technical product-testing context",
+          "variationProfile": {
+            "openingStyle": "product testing scenario",
+            "toneGuidance": "Use practical technical language without making the context overly advanced.",
+            "vocabularySuggestions": [
+              "battery life",
+              "manufacturer claim",
+              "sample mean",
+              "population standard deviation",
+              "hypothesis test"
+            ],
+            "seedPhraseInContext": "A testing lab studies the battery life of a particular battery model.",
+            "avoidPhrases": [
+              "battery disaster",
+              "power drama"
+            ],
+            "contextDetails": [
+              "Each observation is the battery life of one fully charged battery.",
+              "The population standard deviation is known.",
+              "The goal is to test a claim about the true mean battery life."
+            ]
+          }
+        },
+        "parameter": {
+          "symbol": "mu",
+          "description": "the true mean battery life for this battery model"
+        },
+        "nullHypothesis": {
+          "parameterSymbol": "mu",
+          "claimedValue": 10,
+          "operator": "="
+        },
+        "alternativeHypothesis": {
+          "parameterSymbol": "mu",
+          "operator": "<",
+          "direction": "left"
+        },
+        "populationStandardDeviation": {
+          "symbol": "sigma",
+          "value": 1.2,
+          "unit": "hours",
+          "known": true
+        },
+        "sample": {
+          "sampleSize": 36,
+          "sampleMean": 9.4
+        },
+        "question": {
+          "type": "left-tailed",
+          "significanceLevel": 0.05
+        },
+        "method": {
+          "testFamily": "z",
+          "testStatisticFormula": "(x-bar - mu0) / (sigma / sqrt(n))",
+          "standardErrorFormula": "sigma / sqrt(n)",
+          "pValueDirection": "left-tail"
+        },
+        "learningGoals": [
+          "Identify the population mean as the parameter being tested.",
+          "State null and alternative hypotheses for a claim about a population mean.",
+          "Distinguish left-tailed, right-tailed, and two-tailed tests.",
+          "Recognize that a z test is appropriate when the population standard deviation is known.",
+          "Calculate the P-value of the test statistic using the correct tail(s) based on the alternative hypothesis.",
+          "Make a decision about the null hypothesis based on the significance level and p-value.",
+          "Use the sample mean, known population standard deviation, and sample size to conduct the test.",
+          "Interpret the decision and conclusion in context."
+        ],
+        "invariantFacts": [
+          "The parameter is the true mean battery life for this battery model.",
+          "The null claim value is 10 hours.",
+          "The null hypothesis is mu = 10.",
+          "The alternative hypothesis is mu < 10.",
+          "The population standard deviation is known and equals 1.2 hours.",
+          "The sample size is 36.",
+          "The sample mean is 9.4 hours.",
+          "The significance level is 0.05.",
+          "The method uses a z test because the population standard deviation is known.",
+          "The p-value direction is left-tail.",
+          "The question asks students to test whether the true mean battery life for this battery model is less than 10 hours."
+        ],
+        "requiredTasks": [
+          "Identify the population mean being tested.",
+          "State the null hypothesis.",
+          "State the alternative hypothesis.",
+          "Identify the known population standard deviation.",
+          "Identify the sample mean.",
+          "Identify the sample size.",
+          "Identify the significance level.",
+          "Use a z test statistic.",
+          "Calculate the p-value using the correct tail direction.",
+          "Make a decision about the null hypothesis.",
+          "Write a conclusion in context.",
+          "Use a left-tailed alternative hypothesis."
+        ]
+      },
+      "stepExecutionPath": [
+        "generate-hypothesis-test-mean-known-variance-language-variants",
+        "validate-hypothesis-test-mean-known-variance-math-invariants",
+        "evaluate-hypothesis-test-mean-known-variance-register",
+        "compute-hypothesis-test-mean-known-variance-readability-metrics",
+        "assess-hypothesis-test-mean-known-variance-readability-targets"
+      ],
+      "result": {
+        "variants": {
+          "beginner": {
+            "problemText": "A testing lab studies battery life for one battery model. Each observation is one fully charged battery. The measured variable is battery life in hours.\n\nThe manufacturer claims the true average battery life is 10 hours. In statistics, this true average is the population mean. The lab wants to test whether the population mean is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. The lab tests a sample of 36 batteries. The sample mean battery life is 9.4 hours. Use the 0.05 significance level.\n\nBecause the population standard deviation is known, use a z test for the population mean. State the null and alternative claims in words. Calculate the p-value, make a decision about the null claim, and write a conclusion in the battery-testing context.",
+            "linguisticNotes": [
+              "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+              "States the null claim and the left-tailed alternative direction clearly in words.",
+              "Lists the sample size, sample mean, known population standard deviation, and significance level in simple separate statements.",
+              "Explicitly names the z test because the population standard deviation is known, supporting beginner recognition of the method."
+            ]
+          },
+          "intermediate": {
+            "problemText": "A testing lab studies the battery life of a particular battery model. Each observation is the battery life, in hours, of one fully charged battery. The manufacturer’s claim is that the population mean battery life is 10 hours, and the lab wants to test whether the true mean battery life is less than 10 hours.\n\nThe population standard deviation is known to be 1.2 hours. A random sample of 36 batteries has a sample mean battery life of 9.4 hours. At the 0.05 significance level, conduct the hypothesis test. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+            "linguisticNotes": [
+              "Uses standard introductory statistics terms such as population mean, sample mean, population standard deviation, significance level, p-value, and null hypothesis.",
+              "Avoids Greek-letter notation and symbolic hypotheses, expressing all quantities in words.",
+              "Does not explicitly prompt students to use a z test; the known population standard deviation indicates the appropriate method.",
+              "Keeps the left-tailed alternative intact by stating that the true mean battery life is less than 10 hours."
+            ]
+          },
+          "advanced": {
+            "problemText": "In a battery performance study, a testing lab evaluates evidence against the target mean battery life of 10 hours for a particular battery model. Battery life is measured in hours for fully charged batteries, and the inferential question is whether the population mean battery life is less than 10 hours.\n\nAssume the population standard deviation is known to be 1.2 hours. For a sample of 36 batteries, the sample mean battery life is 9.4 hours. At the stated significance level of 0.05, formulate the null and alternative claims, compute the p-value for the left-tailed test, decide how the sample evidence bears on the null claim, and draw a conclusion in the product-testing context.",
+            "linguisticNotes": [
+              "Foregrounds the inferential purpose by referring to evidence against the target mean before listing the data.",
+              "Uses compact statistical phrasing such as “target mean,” “inferential question,” and “sample evidence.”",
+              "Avoids Greek-letter notation and symbolic hypotheses while preserving all numerical details.",
+              "Signals the one-sample z-test setting through the known population standard deviation without turning the prompt into a worked example."
+            ]
+          }
+        },
+        "mathValidation": {
+          "beginner": {
+            "passes": true,
+            "issues": [],
+            "invariantChecks": {
+              "distributionPreserved": true,
+              "randomVariablePreserved": true,
+              "meanPreserved": true,
+              "standardDeviationPreserved": true,
+              "questionTypePreserved": true,
+              "questionValuesPreserved": true,
+              "directionOrTailPreserved": true
+            }
+          },
+          "intermediate": {
+            "passes": true,
+            "issues": [],
+            "invariantChecks": {
+              "distributionPreserved": true,
+              "randomVariablePreserved": true,
+              "meanPreserved": true,
+              "standardDeviationPreserved": true,
+              "questionTypePreserved": true,
+              "questionValuesPreserved": true,
+              "directionOrTailPreserved": true
+            }
+          },
+          "advanced": {
+            "passes": true,
+            "issues": [],
+            "invariantChecks": {
+              "distributionPreserved": true,
+              "randomVariablePreserved": true,
+              "meanPreserved": true,
+              "standardDeviationPreserved": true,
+              "questionTypePreserved": true,
+              "questionValuesPreserved": true,
+              "directionOrTailPreserved": true
+            }
+          }
+        },
+        "registerEvaluation": {
+          "beginner": {
+            "targetLevel": "beginner",
+            "passes": true,
+            "scores": {
+              "lexicalDifficulty": 2,
+              "syntacticComplexity": 2,
+              "mathematicalExplicitness": 2,
+              "register": 2,
+              "referentialCohesion": 2,
+              "conceptualDensity": 2
+            },
+            "strengths": [
+              "Uses clear instructional language with short, direct sentences.",
+              "Introduces essential statistical vocabulary with accessible wording, such as explaining “true average” before “population mean.”",
+              "Repeats key nouns like “battery life,” “population mean,” and “lab,” which supports clarity for beginners.",
+              "Separates the context, data, and task instructions in a way that reduces cognitive load."
+            ],
+            "concerns": [
+              "The final sentence contains several tasks in one sentence, which is slightly dense for a beginner version.",
+              "Terms such as “null,” “alternative,” “p-value,” and “significance level” are necessary but still add some technical load."
+            ],
+            "revisionAdvice": [
+              "Consider breaking the final task sentence into a short numbered or sentence-by-sentence list for stronger beginner accessibility.",
+              "Keep the explanatory phrasing because it appropriately supports the target level."
+            ]
+          },
+          "intermediate": {
+            "targetLevel": "intermediate",
+            "passes": true,
+            "scores": {
+              "lexicalDifficulty": 3,
+              "syntacticComplexity": 3,
+              "mathematicalExplicitness": 3,
+              "register": 3,
+              "referentialCohesion": 3,
+              "conceptualDensity": 3
+            },
+            "strengths": [
+              "Uses standard college statistics textbook language.",
+              "Integrates quantities naturally into paragraph form while preserving clarity.",
+              "Includes appropriate statistical vocabulary such as “population mean,” “sample mean,” “population standard deviation,” “significance level,” and “hypothesis test.”",
+              "The sentence structure is moderately complex but still readable."
+            ],
+            "concerns": [
+              "The first paragraph has a fairly long sentence that combines the manufacturer’s claim and the lab’s testing goal.",
+              "The version remains fairly explicit and accessible, so it sits at the lower-to-middle range of intermediate rather than a high intermediate register."
+            ],
+            "revisionAdvice": [
+              "No major revision is needed for the target level.",
+              "If a slightly stronger intermediate register is desired, the hypotheses could be referenced more compactly without adding unnecessary difficulty."
+            ]
+          },
+          "advanced": {
+            "targetLevel": "advanced",
+            "passes": true,
+            "scores": {
+              "lexicalDifficulty": 4,
+              "syntacticComplexity": 4,
+              "mathematicalExplicitness": 4,
+              "register": 4,
+              "referentialCohesion": 4,
+              "conceptualDensity": 4
+            },
+            "strengths": [
+              "Uses authentic academic/statistical phrasing such as “evaluates evidence,” “inferential question,” “sample evidence,” and “left-tailed test.”",
+              "Presents the assumptions and task in a compact, discipline-appropriate way.",
+              "The register is more formal and conceptually dense than the intermediate version without becoming obscure.",
+              "Maintains clarity while using more advanced nominal and inferential phrasing."
+            ],
+            "concerns": [
+              "The phrase “target mean battery life” is appropriate but slightly less conventional than “claimed mean” or “specified mean” in some textbook contexts.",
+              "The advanced version is clearly denser than the intermediate version, though it remains relatively accessible rather than strongly C1-level academic prose."
+            ],
+            "revisionAdvice": [
+              "No major revision is needed.",
+              "For a more distinctly advanced statistical register, the wording could include slightly more formal hypothesis-testing terminology, but the current version appropriately avoids artificial obscurity."
+            ]
+          },
+          "overallProgression": {
+            "passes": true,
+            "notes": [
+              "The three versions show a clear progression in lexical difficulty, sentence structure, register, and conceptual density.",
+              "The beginner version is explanatory and instructional; the intermediate version resembles a standard college statistics problem; the advanced version uses more compact academic statistical language.",
+              "All versions preserve clarity and coherence while increasing linguistic sophistication across levels.",
+              "The progression is effective, though the intermediate and advanced versions remain close enough that the advanced version could be made slightly more formally academic if a stronger contrast were desired."
+            ]
+          }
+        },
+        "readabilityMetrics": {
+          "beginner": {
+            "wordCount": 131,
+            "sentenceCount": 13,
+            "averageSentenceLength": 10.08,
+            "longestSentenceLength": 18,
+            "characterCount": 649,
+            "syllableCount": 202,
+            "fleschReadingEase": 66.16,
+            "fleschKincaidGrade": 6.54,
+            "technicalTermCount": 13,
+            "quantityCount": 6,
+            "notes": []
+          },
+          "intermediate": {
+            "wordCount": 114,
+            "sentenceCount": 7,
+            "averageSentenceLength": 16.29,
+            "longestSentenceLength": 31,
+            "characterCount": 549,
+            "syllableCount": 175,
+            "fleschReadingEase": 60.44,
+            "fleschKincaidGrade": 8.88,
+            "technicalTermCount": 8,
+            "quantityCount": 6,
+            "notes": [
+              "At least one sentence is longer than 30 words."
+            ]
+          },
+          "advanced": {
+            "wordCount": 113,
+            "sentenceCount": 5,
+            "averageSentenceLength": 22.6,
+            "longestSentenceLength": 38,
+            "characterCount": 573,
+            "syllableCount": 179,
+            "fleschReadingEase": 49.88,
+            "fleschKincaidGrade": 11.92,
+            "technicalTermCount": 9,
+            "quantityCount": 6,
+            "notes": [
+              "At least one sentence is longer than 30 words."
+            ]
+          }
+        },
+        "readabilityTargetAssessment": {
+          "beginner": {
+            "targetLevel": "beginner",
+            "status": "warning",
+            "checks": {
+              "averageSentenceLength": {
+                "value": 10.08,
+                "target": "6–18 words",
+                "status": "passes"
+              },
+              "longestSentenceLength": {
+                "value": 18,
+                "target": "maximum 24 words",
+                "status": "passes"
+              },
+              "fleschKincaidGrade": {
+                "value": 6.54,
+                "target": "0–8.5",
+                "status": "passes"
+              },
+              "technicalTermCount": {
+                "value": 13,
+                "target": "0–11 terms",
+                "status": "warning"
+              }
+            },
+            "issues": [
+              "beginner: technical term count is outside the target range."
+            ],
+            "notes": []
+          },
+          "intermediate": {
+            "targetLevel": "intermediate",
+            "status": "passes",
+            "checks": {
+              "averageSentenceLength": {
+                "value": 16.29,
+                "target": "12–25 words",
+                "status": "passes"
+              },
+              "longestSentenceLength": {
+                "value": 31,
+                "target": "maximum 32 words",
+                "status": "passes"
+              },
+              "fleschKincaidGrade": {
+                "value": 8.88,
+                "target": "6.5–11.5",
+                "status": "passes"
+              },
+              "technicalTermCount": {
+                "value": 8,
+                "target": "2–10 terms",
+                "status": "passes"
+              }
+            },
+            "issues": [],
+            "notes": [
+              "At least one sentence is longer than 30 words.",
+              "intermediate: readability metrics are within the target range."
+            ]
+          },
+          "advanced": {
+            "targetLevel": "advanced",
+            "status": "passes",
+            "checks": {
+              "averageSentenceLength": {
+                "value": 22.6,
+                "target": "16–42 words",
+                "status": "passes"
+              },
+              "longestSentenceLength": {
+                "value": 38,
+                "target": "maximum 60 words",
+                "status": "passes"
+              },
+              "fleschKincaidGrade": {
+                "value": 11.92,
+                "target": "8.5–22",
+                "status": "passes"
+              },
+              "technicalTermCount": {
+                "value": 9,
+                "target": "6–14 terms",
+                "status": "passes"
+              }
+            },
+            "issues": [],
+            "notes": [
+              "At least one sentence is longer than 30 words.",
+              "advanced: readability metrics are within the target range."
+            ]
+          },
+          "overallProgression": {
+            "status": "passes",
+            "issues": [],
+            "notes": [
+              "The readability metrics show a reasonable progression across the three levels."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "ht-mean-known-variance-jellyfish-diameter-left-tailed-alpha-0.05",
+    "topic": "hypothesis-test-mean-known-variance",
+    "subtopic": "left-tailed",
+    "canonicalProblem": {
+      "id": "ht-mean-known-variance-jellyfish-diameter-left-tailed-alpha-0.05",
+      "topic": "hypothesis-test-mean-known-variance",
+      "subtopic": "left-tailed",
+      "context": {
+        "setting": "marine biology survey",
+        "individualDescription": "one jellyfish measured during a coastal survey",
+        "variableDescription": "bell diameter",
+        "unit": "cm",
+        "tone": "scientific field-study context",
+        "variationProfile": {
+          "openingStyle": "marine survey scenario",
+          "toneGuidance": "Use scientific field-study language while keeping the inference task understandable.",
+          "vocabularySuggestions": [
+            "jellyfish",
+            "bell diameter",
+            "marine survey",
+            "population mean",
+            "z test"
+          ],
+          "seedPhraseInContext": "A marine biology team measures jellyfish bell diameters during a coastal survey.",
+          "avoidPhrases": [
+            "jellyfish invasion",
+            "ocean mystery"
+          ],
+          "contextDetails": [
+            "Each observation is the bell diameter of one jellyfish.",
+            "The population standard deviation is treated as known from previous survey records.",
+            "The goal is to test a claim about the true mean bell diameter."
+          ]
+        }
+      },
+      "parameter": {
+        "symbol": "mu",
+        "description": "the true mean bell diameter for jellyfish in the surveyed population"
+      },
+      "nullHypothesis": {
+        "parameterSymbol": "mu",
+        "claimedValue": 25,
+        "operator": "="
+      },
+      "alternativeHypothesis": {
+        "parameterSymbol": "mu",
+        "operator": "<",
+        "direction": "left"
+      },
+      "populationStandardDeviation": {
+        "symbol": "sigma",
+        "value": 6,
+        "unit": "cm",
+        "known": true
+      },
+      "sample": {
+        "sampleSize": 50,
+        "sampleMean": 23.4
+      },
+      "question": {
+        "type": "left-tailed",
+        "significanceLevel": 0.05
+      },
+      "method": {
+        "testFamily": "z",
+        "testStatisticFormula": "(x-bar - mu0) / (sigma / sqrt(n))",
+        "standardErrorFormula": "sigma / sqrt(n)",
+        "pValueDirection": "left-tail"
+      },
+      "learningGoals": [
+        "Identify the population mean as the parameter being tested.",
+        "State null and alternative hypotheses for a claim about a population mean.",
+        "Distinguish left-tailed, right-tailed, and two-tailed tests.",
+        "Recognize that a z test is appropriate when the population standard deviation is known.",
+        "Calculate the P-value of the test statistic using the correct tail(s) based on the alternative hypothesis.",
+        "Make a decision about the null hypothesis based on the significance level and p-value.",
+        "Use the sample mean, known population standard deviation, and sample size to conduct the test.",
+        "Interpret the decision and conclusion in context."
+      ],
+      "invariantFacts": [
+        "The parameter is the true mean bell diameter for jellyfish in the surveyed population.",
+        "The null claim value is 25 cm.",
+        "The null hypothesis is mu = 25.",
+        "The alternative hypothesis is mu < 25.",
+        "The population standard deviation is known and equals 6 cm.",
+        "The sample size is 50.",
+        "The sample mean is 23.4 cm.",
+        "The significance level is 0.05.",
+        "The method uses a z test because the population standard deviation is known.",
+        "The p-value direction is left-tail.",
+        "The question asks students to test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm."
+      ],
+      "requiredTasks": [
+        "Identify the population mean being tested.",
+        "State the null hypothesis.",
+        "State the alternative hypothesis.",
+        "Identify the known population standard deviation.",
+        "Identify the sample mean.",
+        "Identify the sample size.",
+        "Identify the significance level.",
+        "Use a z test statistic.",
+        "Calculate the p-value using the correct tail direction.",
+        "Make a decision about the null hypothesis.",
+        "Write a conclusion in context.",
+        "Use a left-tailed alternative hypothesis."
+      ]
+    },
+    "output": {
+      "status": "success",
+      "steps": {
+        "input": {
+          "id": "ht-mean-known-variance-jellyfish-diameter-left-tailed-alpha-0.05",
+          "topic": "hypothesis-test-mean-known-variance",
+          "subtopic": "left-tailed",
+          "context": {
+            "setting": "marine biology survey",
+            "individualDescription": "one jellyfish measured during a coastal survey",
+            "variableDescription": "bell diameter",
+            "unit": "cm",
+            "tone": "scientific field-study context",
+            "variationProfile": {
+              "openingStyle": "marine survey scenario",
+              "toneGuidance": "Use scientific field-study language while keeping the inference task understandable.",
+              "vocabularySuggestions": [
+                "jellyfish",
+                "bell diameter",
+                "marine survey",
+                "population mean",
+                "z test"
+              ],
+              "seedPhraseInContext": "A marine biology team measures jellyfish bell diameters during a coastal survey.",
+              "avoidPhrases": [
+                "jellyfish invasion",
+                "ocean mystery"
+              ],
+              "contextDetails": [
+                "Each observation is the bell diameter of one jellyfish.",
+                "The population standard deviation is treated as known from previous survey records.",
+                "The goal is to test a claim about the true mean bell diameter."
+              ]
+            }
+          },
+          "parameter": {
+            "symbol": "mu",
+            "description": "the true mean bell diameter for jellyfish in the surveyed population"
+          },
+          "nullHypothesis": {
+            "parameterSymbol": "mu",
+            "claimedValue": 25,
+            "operator": "="
+          },
+          "alternativeHypothesis": {
+            "parameterSymbol": "mu",
+            "operator": "<",
+            "direction": "left"
+          },
+          "populationStandardDeviation": {
+            "symbol": "sigma",
+            "value": 6,
+            "unit": "cm",
+            "known": true
+          },
+          "sample": {
+            "sampleSize": 50,
+            "sampleMean": 23.4
+          },
+          "question": {
+            "type": "left-tailed",
+            "significanceLevel": 0.05
+          },
+          "method": {
+            "testFamily": "z",
+            "testStatisticFormula": "(x-bar - mu0) / (sigma / sqrt(n))",
+            "standardErrorFormula": "sigma / sqrt(n)",
+            "pValueDirection": "left-tail"
+          },
+          "learningGoals": [
+            "Identify the population mean as the parameter being tested.",
+            "State null and alternative hypotheses for a claim about a population mean.",
+            "Distinguish left-tailed, right-tailed, and two-tailed tests.",
+            "Recognize that a z test is appropriate when the population standard deviation is known.",
+            "Calculate the P-value of the test statistic using the correct tail(s) based on the alternative hypothesis.",
+            "Make a decision about the null hypothesis based on the significance level and p-value.",
+            "Use the sample mean, known population standard deviation, and sample size to conduct the test.",
+            "Interpret the decision and conclusion in context."
+          ],
+          "invariantFacts": [
+            "The parameter is the true mean bell diameter for jellyfish in the surveyed population.",
+            "The null claim value is 25 cm.",
+            "The null hypothesis is mu = 25.",
+            "The alternative hypothesis is mu < 25.",
+            "The population standard deviation is known and equals 6 cm.",
+            "The sample size is 50.",
+            "The sample mean is 23.4 cm.",
+            "The significance level is 0.05.",
+            "The method uses a z test because the population standard deviation is known.",
+            "The p-value direction is left-tail.",
+            "The question asks students to test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm."
+          ],
+          "requiredTasks": [
+            "Identify the population mean being tested.",
+            "State the null hypothesis.",
+            "State the alternative hypothesis.",
+            "Identify the known population standard deviation.",
+            "Identify the sample mean.",
+            "Identify the sample size.",
+            "Identify the significance level.",
+            "Use a z test statistic.",
+            "Calculate the p-value using the correct tail direction.",
+            "Make a decision about the null hypothesis.",
+            "Write a conclusion in context.",
+            "Use a left-tailed alternative hypothesis."
+          ]
+        },
+        "generate-hypothesis-test-mean-known-variance-language-variants": {
+          "startedAt": 1781744018930,
+          "status": "success",
+          "output": {
+            "canonicalProblem": {
+              "id": "ht-mean-known-variance-jellyfish-diameter-left-tailed-alpha-0.05",
+              "topic": "hypothesis-test-mean-known-variance",
+              "subtopic": "left-tailed",
+              "context": {
+                "setting": "marine biology survey",
+                "individualDescription": "one jellyfish measured during a coastal survey",
+                "variableDescription": "bell diameter",
+                "unit": "cm",
+                "tone": "scientific field-study context",
+                "variationProfile": {
+                  "openingStyle": "marine survey scenario",
+                  "toneGuidance": "Use scientific field-study language while keeping the inference task understandable.",
+                  "vocabularySuggestions": [
+                    "jellyfish",
+                    "bell diameter",
+                    "marine survey",
+                    "population mean",
+                    "z test"
+                  ],
+                  "seedPhraseInContext": "A marine biology team measures jellyfish bell diameters during a coastal survey.",
+                  "avoidPhrases": [
+                    "jellyfish invasion",
+                    "ocean mystery"
+                  ],
+                  "contextDetails": [
+                    "Each observation is the bell diameter of one jellyfish.",
+                    "The population standard deviation is treated as known from previous survey records.",
+                    "The goal is to test a claim about the true mean bell diameter."
+                  ]
+                }
+              },
+              "parameter": {
+                "symbol": "mu",
+                "description": "the true mean bell diameter for jellyfish in the surveyed population"
+              },
+              "nullHypothesis": {
+                "parameterSymbol": "mu",
+                "claimedValue": 25,
+                "operator": "="
+              },
+              "alternativeHypothesis": {
+                "parameterSymbol": "mu",
+                "operator": "<",
+                "direction": "left"
+              },
+              "populationStandardDeviation": {
+                "symbol": "sigma",
+                "value": 6,
+                "unit": "cm",
+                "known": true
+              },
+              "sample": {
+                "sampleSize": 50,
+                "sampleMean": 23.4
+              },
+              "question": {
+                "type": "left-tailed",
+                "significanceLevel": 0.05
+              },
+              "method": {
+                "testFamily": "z",
+                "testStatisticFormula": "(x-bar - mu0) / (sigma / sqrt(n))",
+                "standardErrorFormula": "sigma / sqrt(n)",
+                "pValueDirection": "left-tail"
+              },
+              "learningGoals": [
+                "Identify the population mean as the parameter being tested.",
+                "State null and alternative hypotheses for a claim about a population mean.",
+                "Distinguish left-tailed, right-tailed, and two-tailed tests.",
+                "Recognize that a z test is appropriate when the population standard deviation is known.",
+                "Calculate the P-value of the test statistic using the correct tail(s) based on the alternative hypothesis.",
+                "Make a decision about the null hypothesis based on the significance level and p-value.",
+                "Use the sample mean, known population standard deviation, and sample size to conduct the test.",
+                "Interpret the decision and conclusion in context."
+              ],
+              "invariantFacts": [
+                "The parameter is the true mean bell diameter for jellyfish in the surveyed population.",
+                "The null claim value is 25 cm.",
+                "The null hypothesis is mu = 25.",
+                "The alternative hypothesis is mu < 25.",
+                "The population standard deviation is known and equals 6 cm.",
+                "The sample size is 50.",
+                "The sample mean is 23.4 cm.",
+                "The significance level is 0.05.",
+                "The method uses a z test because the population standard deviation is known.",
+                "The p-value direction is left-tail.",
+                "The question asks students to test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm."
+              ],
+              "requiredTasks": [
+                "Identify the population mean being tested.",
+                "State the null hypothesis.",
+                "State the alternative hypothesis.",
+                "Identify the known population standard deviation.",
+                "Identify the sample mean.",
+                "Identify the sample size.",
+                "Identify the significance level.",
+                "Use a z test statistic.",
+                "Calculate the p-value using the correct tail direction.",
+                "Make a decision about the null hypothesis.",
+                "Write a conclusion in context.",
+                "Use a left-tailed alternative hypothesis."
+              ]
+            },
+            "variants": {
+              "beginner": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each measurement is for one jellyfish. The team wants to test the true average bell diameter. This true average is the population mean. The null claim says the population mean is 25 cm. The alternative claim says the population mean is less than 25 cm. Previous survey records show a known population standard deviation of 6 cm. The team measures 50 jellyfish. The sample mean is 23.4 cm. Use a 0.05 significance level. Because the population standard deviation is known, use a z test. State the null and alternative claims in words. Conduct the hypothesis test. Find the p-value using the left tail. Write a conclusion in the survey context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the less-than alternative in separate sentences.",
+                  "Explicitly says to use a z test because the population standard deviation is known."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each observation is the bell diameter of one jellyfish. Previous survey records indicate that the population standard deviation is known to be 6 cm. In a sample of 50 jellyfish, the sample mean bell diameter is 23.4 cm. At the 0.05 significance level, test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics language, including population mean, sample mean, significance level, p-value, and null hypothesis.",
+                  "Avoids symbolic notation and states all quantities in words.",
+                  "Gives the known population standard deviation so the z-test setting is clear without an explicit method command."
+                ]
+              },
+              "advanced": {
+                "problemText": "During a coastal marine survey, researchers evaluate whether the target mean bell diameter of 25 cm overstates the true mean for the surveyed jellyfish population. The measured variable is the bell diameter of an individual jellyfish, and prior survey records treat the population standard deviation as known at 6 cm. The current sample includes 50 jellyfish with a sample mean bell diameter of 23.4 cm. At the 0.05 significance level, formulate the null and left-tailed alternative claims, test whether the data provide evidence that the true mean bell diameter is less than 25 cm, determine the appropriate p-value, and draw a conclusion in the marine survey context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by framing 25 cm as a target mean being evaluated.",
+                  "Uses denser scientific and statistical phrasing while avoiding Greek-letter notation.",
+                  "Maintains the known-standard-deviation condition, which identifies the one-sample z-test framework without giving calculations."
+                ]
+              }
+            }
+          },
+          "endedAt": 1781744053767
+        },
+        "validate-hypothesis-test-mean-known-variance-math-invariants": {
+          "startedAt": 1781744053767,
+          "status": "success",
+          "output": {
+            "variants": {
+              "beginner": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each measurement is for one jellyfish. The team wants to test the true average bell diameter. This true average is the population mean. The null claim says the population mean is 25 cm. The alternative claim says the population mean is less than 25 cm. Previous survey records show a known population standard deviation of 6 cm. The team measures 50 jellyfish. The sample mean is 23.4 cm. Use a 0.05 significance level. Because the population standard deviation is known, use a z test. State the null and alternative claims in words. Conduct the hypothesis test. Find the p-value using the left tail. Write a conclusion in the survey context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the less-than alternative in separate sentences.",
+                  "Explicitly says to use a z test because the population standard deviation is known."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each observation is the bell diameter of one jellyfish. Previous survey records indicate that the population standard deviation is known to be 6 cm. In a sample of 50 jellyfish, the sample mean bell diameter is 23.4 cm. At the 0.05 significance level, test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics language, including population mean, sample mean, significance level, p-value, and null hypothesis.",
+                  "Avoids symbolic notation and states all quantities in words.",
+                  "Gives the known population standard deviation so the z-test setting is clear without an explicit method command."
+                ]
+              },
+              "advanced": {
+                "problemText": "During a coastal marine survey, researchers evaluate whether the target mean bell diameter of 25 cm overstates the true mean for the surveyed jellyfish population. The measured variable is the bell diameter of an individual jellyfish, and prior survey records treat the population standard deviation as known at 6 cm. The current sample includes 50 jellyfish with a sample mean bell diameter of 23.4 cm. At the 0.05 significance level, formulate the null and left-tailed alternative claims, test whether the data provide evidence that the true mean bell diameter is less than 25 cm, determine the appropriate p-value, and draw a conclusion in the marine survey context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by framing 25 cm as a target mean being evaluated.",
+                  "Uses denser scientific and statistical phrasing while avoiding Greek-letter notation.",
+                  "Maintains the known-standard-deviation condition, which identifies the one-sample z-test framework without giving calculations."
+                ]
+              }
+            },
+            "mathValidation": {
+              "beginner": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "intermediate": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "advanced": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              }
+            }
+          },
+          "endedAt": 1781744061120
+        },
+        "evaluate-hypothesis-test-mean-known-variance-register": {
+          "startedAt": 1781744061120,
+          "status": "success",
+          "output": {
+            "variants": {
+              "beginner": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each measurement is for one jellyfish. The team wants to test the true average bell diameter. This true average is the population mean. The null claim says the population mean is 25 cm. The alternative claim says the population mean is less than 25 cm. Previous survey records show a known population standard deviation of 6 cm. The team measures 50 jellyfish. The sample mean is 23.4 cm. Use a 0.05 significance level. Because the population standard deviation is known, use a z test. State the null and alternative claims in words. Conduct the hypothesis test. Find the p-value using the left tail. Write a conclusion in the survey context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the less-than alternative in separate sentences.",
+                  "Explicitly says to use a z test because the population standard deviation is known."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each observation is the bell diameter of one jellyfish. Previous survey records indicate that the population standard deviation is known to be 6 cm. In a sample of 50 jellyfish, the sample mean bell diameter is 23.4 cm. At the 0.05 significance level, test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics language, including population mean, sample mean, significance level, p-value, and null hypothesis.",
+                  "Avoids symbolic notation and states all quantities in words.",
+                  "Gives the known population standard deviation so the z-test setting is clear without an explicit method command."
+                ]
+              },
+              "advanced": {
+                "problemText": "During a coastal marine survey, researchers evaluate whether the target mean bell diameter of 25 cm overstates the true mean for the surveyed jellyfish population. The measured variable is the bell diameter of an individual jellyfish, and prior survey records treat the population standard deviation as known at 6 cm. The current sample includes 50 jellyfish with a sample mean bell diameter of 23.4 cm. At the 0.05 significance level, formulate the null and left-tailed alternative claims, test whether the data provide evidence that the true mean bell diameter is less than 25 cm, determine the appropriate p-value, and draw a conclusion in the marine survey context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by framing 25 cm as a target mean being evaluated.",
+                  "Uses denser scientific and statistical phrasing while avoiding Greek-letter notation.",
+                  "Maintains the known-standard-deviation condition, which identifies the one-sample z-test framework without giving calculations."
+                ]
+              }
+            },
+            "mathValidation": {
+              "beginner": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "intermediate": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "advanced": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              }
+            },
+            "registerEvaluation": {
+              "beginner": {
+                "targetLevel": "beginner",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 2,
+                  "syntacticComplexity": 1.5,
+                  "mathematicalExplicitness": 2,
+                  "register": 2,
+                  "referentialCohesion": 2,
+                  "conceptualDensity": 2
+                },
+                "strengths": [
+                  "Uses short, direct sentences that are appropriate for a beginner audience.",
+                  "Introduces the phrase “population mean” by first using the more familiar phrase “true average.”",
+                  "Separates the null claim, alternative claim, sample information, and task instructions clearly.",
+                  "Repeats key nouns such as “team,” “population mean,” and “jellyfish,” which supports comprehension.",
+                  "Uses clear instructional language and explicitly identifies the left-tail p-value and z-test setting."
+                ],
+                "concerns": [
+                  "The sequence of many short sentences is very clear but slightly list-like.",
+                  "The number of instructions at the end may feel dense for some beginners, even though each instruction is simply worded."
+                ],
+                "revisionAdvice": [
+                  "The version is appropriate for the beginner target level.",
+                  "If further simplification were needed, the final set of tasks could be broken into bullet points."
+                ]
+              },
+              "intermediate": {
+                "targetLevel": "intermediate",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 3,
+                  "syntacticComplexity": 3,
+                  "mathematicalExplicitness": 3,
+                  "register": 3,
+                  "referentialCohesion": 3,
+                  "conceptualDensity": 3
+                },
+                "strengths": [
+                  "Uses standard college statistics vocabulary, including “observation,” “population standard deviation,” “sample mean,” “significance level,” “p-value,” and “null hypothesis.”",
+                  "The paragraph form resembles a typical introductory college statistics textbook problem.",
+                  "Quantities are integrated smoothly while remaining easy to locate.",
+                  "The task statement is concise but complete.",
+                  "The language avoids unnecessary notation while maintaining statistical precision."
+                ],
+                "concerns": [
+                  "The final sentence contains several requested actions in a single sentence, but this is acceptable for the intermediate level.",
+                  "The phrase “surveyed population” is clear, though somewhat more formal than beginner language."
+                ],
+                "revisionAdvice": [
+                  "The version is well matched to the intermediate target level.",
+                  "No major language-level revision is needed."
+                ]
+              },
+              "advanced": {
+                "targetLevel": "advanced",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 4,
+                  "syntacticComplexity": 4,
+                  "mathematicalExplicitness": 4,
+                  "register": 4,
+                  "referentialCohesion": 4,
+                  "conceptualDensity": 4
+                },
+                "strengths": [
+                  "Uses an appropriately academic statistical register with phrases such as “target mean,” “overstates the true mean,” “left-tailed alternative claims,” and “provide evidence.”",
+                  "The inferential purpose is foregrounded in a more sophisticated way than in the beginner and intermediate versions.",
+                  "The syntax is denser and more varied, consistent with advanced academic problem statements.",
+                  "The assumptions and sample information are compactly presented without becoming obscure.",
+                  "The problem maintains clarity while increasing conceptual and linguistic density."
+                ],
+                "concerns": [
+                  "The phrase “target mean bell diameter of 25 cm overstates the true mean” is more abstract than the lower-level versions, but it is appropriate for the advanced target.",
+                  "The version is advanced in register but still relatively accessible because it avoids symbolic notation."
+                ],
+                "revisionAdvice": [
+                  "The version is appropriate for the advanced target level.",
+                  "If a more strongly advanced statistical style were desired, limited symbolic notation could be added, but it is not necessary for the current language profile."
+                ]
+              },
+              "overallProgression": {
+                "passes": true,
+                "notes": [
+                  "The three versions show a clear progression from explicit instructional wording to standard college textbook language to denser academic statistical phrasing.",
+                  "Lexical difficulty increases appropriately across the versions.",
+                  "Syntactic complexity increases from short beginner sentences to moderate intermediate paragraph structure to more compact advanced clauses.",
+                  "The beginner version prioritizes transparency, the intermediate version uses conventional introductory statistics language, and the advanced version adopts a more scientific inferential framing.",
+                  "The progression is natural and not artificially obscure."
+                ]
+              }
+            }
+          },
+          "endedAt": 1781744080417
+        },
+        "compute-hypothesis-test-mean-known-variance-readability-metrics": {
+          "startedAt": 1781744080417,
+          "status": "success",
+          "output": {
+            "variants": {
+              "beginner": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each measurement is for one jellyfish. The team wants to test the true average bell diameter. This true average is the population mean. The null claim says the population mean is 25 cm. The alternative claim says the population mean is less than 25 cm. Previous survey records show a known population standard deviation of 6 cm. The team measures 50 jellyfish. The sample mean is 23.4 cm. Use a 0.05 significance level. Because the population standard deviation is known, use a z test. State the null and alternative claims in words. Conduct the hypothesis test. Find the p-value using the left tail. Write a conclusion in the survey context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the less-than alternative in separate sentences.",
+                  "Explicitly says to use a z test because the population standard deviation is known."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each observation is the bell diameter of one jellyfish. Previous survey records indicate that the population standard deviation is known to be 6 cm. In a sample of 50 jellyfish, the sample mean bell diameter is 23.4 cm. At the 0.05 significance level, test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics language, including population mean, sample mean, significance level, p-value, and null hypothesis.",
+                  "Avoids symbolic notation and states all quantities in words.",
+                  "Gives the known population standard deviation so the z-test setting is clear without an explicit method command."
+                ]
+              },
+              "advanced": {
+                "problemText": "During a coastal marine survey, researchers evaluate whether the target mean bell diameter of 25 cm overstates the true mean for the surveyed jellyfish population. The measured variable is the bell diameter of an individual jellyfish, and prior survey records treat the population standard deviation as known at 6 cm. The current sample includes 50 jellyfish with a sample mean bell diameter of 23.4 cm. At the 0.05 significance level, formulate the null and left-tailed alternative claims, test whether the data provide evidence that the true mean bell diameter is less than 25 cm, determine the appropriate p-value, and draw a conclusion in the marine survey context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by framing 25 cm as a target mean being evaluated.",
+                  "Uses denser scientific and statistical phrasing while avoiding Greek-letter notation.",
+                  "Maintains the known-standard-deviation condition, which identifies the one-sample z-test framework without giving calculations."
+                ]
+              }
+            },
+            "mathValidation": {
+              "beginner": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "intermediate": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "advanced": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              }
+            },
+            "registerEvaluation": {
+              "beginner": {
+                "targetLevel": "beginner",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 2,
+                  "syntacticComplexity": 1.5,
+                  "mathematicalExplicitness": 2,
+                  "register": 2,
+                  "referentialCohesion": 2,
+                  "conceptualDensity": 2
+                },
+                "strengths": [
+                  "Uses short, direct sentences that are appropriate for a beginner audience.",
+                  "Introduces the phrase “population mean” by first using the more familiar phrase “true average.”",
+                  "Separates the null claim, alternative claim, sample information, and task instructions clearly.",
+                  "Repeats key nouns such as “team,” “population mean,” and “jellyfish,” which supports comprehension.",
+                  "Uses clear instructional language and explicitly identifies the left-tail p-value and z-test setting."
+                ],
+                "concerns": [
+                  "The sequence of many short sentences is very clear but slightly list-like.",
+                  "The number of instructions at the end may feel dense for some beginners, even though each instruction is simply worded."
+                ],
+                "revisionAdvice": [
+                  "The version is appropriate for the beginner target level.",
+                  "If further simplification were needed, the final set of tasks could be broken into bullet points."
+                ]
+              },
+              "intermediate": {
+                "targetLevel": "intermediate",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 3,
+                  "syntacticComplexity": 3,
+                  "mathematicalExplicitness": 3,
+                  "register": 3,
+                  "referentialCohesion": 3,
+                  "conceptualDensity": 3
+                },
+                "strengths": [
+                  "Uses standard college statistics vocabulary, including “observation,” “population standard deviation,” “sample mean,” “significance level,” “p-value,” and “null hypothesis.”",
+                  "The paragraph form resembles a typical introductory college statistics textbook problem.",
+                  "Quantities are integrated smoothly while remaining easy to locate.",
+                  "The task statement is concise but complete.",
+                  "The language avoids unnecessary notation while maintaining statistical precision."
+                ],
+                "concerns": [
+                  "The final sentence contains several requested actions in a single sentence, but this is acceptable for the intermediate level.",
+                  "The phrase “surveyed population” is clear, though somewhat more formal than beginner language."
+                ],
+                "revisionAdvice": [
+                  "The version is well matched to the intermediate target level.",
+                  "No major language-level revision is needed."
+                ]
+              },
+              "advanced": {
+                "targetLevel": "advanced",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 4,
+                  "syntacticComplexity": 4,
+                  "mathematicalExplicitness": 4,
+                  "register": 4,
+                  "referentialCohesion": 4,
+                  "conceptualDensity": 4
+                },
+                "strengths": [
+                  "Uses an appropriately academic statistical register with phrases such as “target mean,” “overstates the true mean,” “left-tailed alternative claims,” and “provide evidence.”",
+                  "The inferential purpose is foregrounded in a more sophisticated way than in the beginner and intermediate versions.",
+                  "The syntax is denser and more varied, consistent with advanced academic problem statements.",
+                  "The assumptions and sample information are compactly presented without becoming obscure.",
+                  "The problem maintains clarity while increasing conceptual and linguistic density."
+                ],
+                "concerns": [
+                  "The phrase “target mean bell diameter of 25 cm overstates the true mean” is more abstract than the lower-level versions, but it is appropriate for the advanced target.",
+                  "The version is advanced in register but still relatively accessible because it avoids symbolic notation."
+                ],
+                "revisionAdvice": [
+                  "The version is appropriate for the advanced target level.",
+                  "If a more strongly advanced statistical style were desired, limited symbolic notation could be added, but it is not necessary for the current language profile."
+                ]
+              },
+              "overallProgression": {
+                "passes": true,
+                "notes": [
+                  "The three versions show a clear progression from explicit instructional wording to standard college textbook language to denser academic statistical phrasing.",
+                  "Lexical difficulty increases appropriately across the versions.",
+                  "Syntactic complexity increases from short beginner sentences to moderate intermediate paragraph structure to more compact advanced clauses.",
+                  "The beginner version prioritizes transparency, the intermediate version uses conventional introductory statistics language, and the advanced version adopts a more scientific inferential framing.",
+                  "The progression is natural and not artificially obscure."
+                ]
+              }
+            },
+            "readabilityMetrics": {
+              "beginner": {
+                "wordCount": 122,
+                "sentenceCount": 15,
+                "averageSentenceLength": 8.13,
+                "longestSentenceLength": 12,
+                "characterCount": 602,
+                "syllableCount": 187,
+                "fleschReadingEase": 68.91,
+                "fleschKincaidGrade": 5.67,
+                "technicalTermCount": 12,
+                "quantityCount": 6,
+                "notes": []
+              },
+              "intermediate": {
+                "wordCount": 97,
+                "sentenceCount": 6,
+                "averageSentenceLength": 16.17,
+                "longestSentenceLength": 24,
+                "characterCount": 491,
+                "syllableCount": 156,
+                "fleschReadingEase": 54.37,
+                "fleschKincaidGrade": 9.69,
+                "technicalTermCount": 7,
+                "quantityCount": 5,
+                "notes": []
+              },
+              "advanced": {
+                "wordCount": 107,
+                "sentenceCount": 4,
+                "averageSentenceLength": 26.75,
+                "longestSentenceLength": 42,
+                "characterCount": 563,
+                "syllableCount": 174,
+                "fleschReadingEase": 42.11,
+                "fleschKincaidGrade": 14.03,
+                "technicalTermCount": 9,
+                "quantityCount": 6,
+                "notes": [
+                  "At least one sentence is longer than 30 words."
+                ]
+              }
+            }
+          },
+          "endedAt": 1781744080418
+        },
+        "assess-hypothesis-test-mean-known-variance-readability-targets": {
+          "startedAt": 1781744080418,
+          "status": "success",
+          "output": {
+            "variants": {
+              "beginner": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each measurement is for one jellyfish. The team wants to test the true average bell diameter. This true average is the population mean. The null claim says the population mean is 25 cm. The alternative claim says the population mean is less than 25 cm. Previous survey records show a known population standard deviation of 6 cm. The team measures 50 jellyfish. The sample mean is 23.4 cm. Use a 0.05 significance level. Because the population standard deviation is known, use a z test. State the null and alternative claims in words. Conduct the hypothesis test. Find the p-value using the left tail. Write a conclusion in the survey context.",
+                "linguisticNotes": [
+                  "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+                  "States the null claim and the less-than alternative in separate sentences.",
+                  "Explicitly says to use a z test because the population standard deviation is known."
+                ]
+              },
+              "intermediate": {
+                "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each observation is the bell diameter of one jellyfish. Previous survey records indicate that the population standard deviation is known to be 6 cm. In a sample of 50 jellyfish, the sample mean bell diameter is 23.4 cm. At the 0.05 significance level, test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+                "linguisticNotes": [
+                  "Uses standard introductory statistics language, including population mean, sample mean, significance level, p-value, and null hypothesis.",
+                  "Avoids symbolic notation and states all quantities in words.",
+                  "Gives the known population standard deviation so the z-test setting is clear without an explicit method command."
+                ]
+              },
+              "advanced": {
+                "problemText": "During a coastal marine survey, researchers evaluate whether the target mean bell diameter of 25 cm overstates the true mean for the surveyed jellyfish population. The measured variable is the bell diameter of an individual jellyfish, and prior survey records treat the population standard deviation as known at 6 cm. The current sample includes 50 jellyfish with a sample mean bell diameter of 23.4 cm. At the 0.05 significance level, formulate the null and left-tailed alternative claims, test whether the data provide evidence that the true mean bell diameter is less than 25 cm, determine the appropriate p-value, and draw a conclusion in the marine survey context.",
+                "linguisticNotes": [
+                  "Foregrounds the inferential purpose by framing 25 cm as a target mean being evaluated.",
+                  "Uses denser scientific and statistical phrasing while avoiding Greek-letter notation.",
+                  "Maintains the known-standard-deviation condition, which identifies the one-sample z-test framework without giving calculations."
+                ]
+              }
+            },
+            "mathValidation": {
+              "beginner": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "intermediate": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              },
+              "advanced": {
+                "passes": true,
+                "issues": [],
+                "invariantChecks": {
+                  "distributionPreserved": true,
+                  "randomVariablePreserved": true,
+                  "meanPreserved": true,
+                  "standardDeviationPreserved": true,
+                  "questionTypePreserved": true,
+                  "questionValuesPreserved": true,
+                  "directionOrTailPreserved": true
+                }
+              }
+            },
+            "registerEvaluation": {
+              "beginner": {
+                "targetLevel": "beginner",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 2,
+                  "syntacticComplexity": 1.5,
+                  "mathematicalExplicitness": 2,
+                  "register": 2,
+                  "referentialCohesion": 2,
+                  "conceptualDensity": 2
+                },
+                "strengths": [
+                  "Uses short, direct sentences that are appropriate for a beginner audience.",
+                  "Introduces the phrase “population mean” by first using the more familiar phrase “true average.”",
+                  "Separates the null claim, alternative claim, sample information, and task instructions clearly.",
+                  "Repeats key nouns such as “team,” “population mean,” and “jellyfish,” which supports comprehension.",
+                  "Uses clear instructional language and explicitly identifies the left-tail p-value and z-test setting."
+                ],
+                "concerns": [
+                  "The sequence of many short sentences is very clear but slightly list-like.",
+                  "The number of instructions at the end may feel dense for some beginners, even though each instruction is simply worded."
+                ],
+                "revisionAdvice": [
+                  "The version is appropriate for the beginner target level.",
+                  "If further simplification were needed, the final set of tasks could be broken into bullet points."
+                ]
+              },
+              "intermediate": {
+                "targetLevel": "intermediate",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 3,
+                  "syntacticComplexity": 3,
+                  "mathematicalExplicitness": 3,
+                  "register": 3,
+                  "referentialCohesion": 3,
+                  "conceptualDensity": 3
+                },
+                "strengths": [
+                  "Uses standard college statistics vocabulary, including “observation,” “population standard deviation,” “sample mean,” “significance level,” “p-value,” and “null hypothesis.”",
+                  "The paragraph form resembles a typical introductory college statistics textbook problem.",
+                  "Quantities are integrated smoothly while remaining easy to locate.",
+                  "The task statement is concise but complete.",
+                  "The language avoids unnecessary notation while maintaining statistical precision."
+                ],
+                "concerns": [
+                  "The final sentence contains several requested actions in a single sentence, but this is acceptable for the intermediate level.",
+                  "The phrase “surveyed population” is clear, though somewhat more formal than beginner language."
+                ],
+                "revisionAdvice": [
+                  "The version is well matched to the intermediate target level.",
+                  "No major language-level revision is needed."
+                ]
+              },
+              "advanced": {
+                "targetLevel": "advanced",
+                "passes": true,
+                "scores": {
+                  "lexicalDifficulty": 4,
+                  "syntacticComplexity": 4,
+                  "mathematicalExplicitness": 4,
+                  "register": 4,
+                  "referentialCohesion": 4,
+                  "conceptualDensity": 4
+                },
+                "strengths": [
+                  "Uses an appropriately academic statistical register with phrases such as “target mean,” “overstates the true mean,” “left-tailed alternative claims,” and “provide evidence.”",
+                  "The inferential purpose is foregrounded in a more sophisticated way than in the beginner and intermediate versions.",
+                  "The syntax is denser and more varied, consistent with advanced academic problem statements.",
+                  "The assumptions and sample information are compactly presented without becoming obscure.",
+                  "The problem maintains clarity while increasing conceptual and linguistic density."
+                ],
+                "concerns": [
+                  "The phrase “target mean bell diameter of 25 cm overstates the true mean” is more abstract than the lower-level versions, but it is appropriate for the advanced target.",
+                  "The version is advanced in register but still relatively accessible because it avoids symbolic notation."
+                ],
+                "revisionAdvice": [
+                  "The version is appropriate for the advanced target level.",
+                  "If a more strongly advanced statistical style were desired, limited symbolic notation could be added, but it is not necessary for the current language profile."
+                ]
+              },
+              "overallProgression": {
+                "passes": true,
+                "notes": [
+                  "The three versions show a clear progression from explicit instructional wording to standard college textbook language to denser academic statistical phrasing.",
+                  "Lexical difficulty increases appropriately across the versions.",
+                  "Syntactic complexity increases from short beginner sentences to moderate intermediate paragraph structure to more compact advanced clauses.",
+                  "The beginner version prioritizes transparency, the intermediate version uses conventional introductory statistics language, and the advanced version adopts a more scientific inferential framing.",
+                  "The progression is natural and not artificially obscure."
+                ]
+              }
+            },
+            "readabilityMetrics": {
+              "beginner": {
+                "wordCount": 122,
+                "sentenceCount": 15,
+                "averageSentenceLength": 8.13,
+                "longestSentenceLength": 12,
+                "characterCount": 602,
+                "syllableCount": 187,
+                "fleschReadingEase": 68.91,
+                "fleschKincaidGrade": 5.67,
+                "technicalTermCount": 12,
+                "quantityCount": 6,
+                "notes": []
+              },
+              "intermediate": {
+                "wordCount": 97,
+                "sentenceCount": 6,
+                "averageSentenceLength": 16.17,
+                "longestSentenceLength": 24,
+                "characterCount": 491,
+                "syllableCount": 156,
+                "fleschReadingEase": 54.37,
+                "fleschKincaidGrade": 9.69,
+                "technicalTermCount": 7,
+                "quantityCount": 5,
+                "notes": []
+              },
+              "advanced": {
+                "wordCount": 107,
+                "sentenceCount": 4,
+                "averageSentenceLength": 26.75,
+                "longestSentenceLength": 42,
+                "characterCount": 563,
+                "syllableCount": 174,
+                "fleschReadingEase": 42.11,
+                "fleschKincaidGrade": 14.03,
+                "technicalTermCount": 9,
+                "quantityCount": 6,
+                "notes": [
+                  "At least one sentence is longer than 30 words."
+                ]
+              }
+            },
+            "readabilityTargetAssessment": {
+              "beginner": {
+                "targetLevel": "beginner",
+                "status": "warning",
+                "checks": {
+                  "averageSentenceLength": {
+                    "value": 8.13,
+                    "target": "6–18 words",
+                    "status": "passes"
+                  },
+                  "longestSentenceLength": {
+                    "value": 12,
+                    "target": "maximum 24 words",
+                    "status": "passes"
+                  },
+                  "fleschKincaidGrade": {
+                    "value": 5.67,
+                    "target": "0–8.5",
+                    "status": "passes"
+                  },
+                  "technicalTermCount": {
+                    "value": 12,
+                    "target": "0–11 terms",
+                    "status": "warning"
+                  }
+                },
+                "issues": [
+                  "beginner: technical term count is outside the target range."
+                ],
+                "notes": []
+              },
+              "intermediate": {
+                "targetLevel": "intermediate",
+                "status": "passes",
+                "checks": {
+                  "averageSentenceLength": {
+                    "value": 16.17,
+                    "target": "12–25 words",
+                    "status": "passes"
+                  },
+                  "longestSentenceLength": {
+                    "value": 24,
+                    "target": "maximum 32 words",
+                    "status": "passes"
+                  },
+                  "fleschKincaidGrade": {
+                    "value": 9.69,
+                    "target": "6.5–11.5",
+                    "status": "passes"
+                  },
+                  "technicalTermCount": {
+                    "value": 7,
+                    "target": "2–10 terms",
+                    "status": "passes"
+                  }
+                },
+                "issues": [],
+                "notes": [
+                  "intermediate: readability metrics are within the target range."
+                ]
+              },
+              "advanced": {
+                "targetLevel": "advanced",
+                "status": "passes",
+                "checks": {
+                  "averageSentenceLength": {
+                    "value": 26.75,
+                    "target": "16–42 words",
+                    "status": "passes"
+                  },
+                  "longestSentenceLength": {
+                    "value": 42,
+                    "target": "maximum 60 words",
+                    "status": "passes"
+                  },
+                  "fleschKincaidGrade": {
+                    "value": 14.03,
+                    "target": "8.5–22",
+                    "status": "passes"
+                  },
+                  "technicalTermCount": {
+                    "value": 9,
+                    "target": "6–14 terms",
+                    "status": "passes"
+                  }
+                },
+                "issues": [],
+                "notes": [
+                  "At least one sentence is longer than 30 words.",
+                  "advanced: readability metrics are within the target range."
+                ]
+              },
+              "overallProgression": {
+                "status": "passes",
+                "issues": [],
+                "notes": [
+                  "The readability metrics show a reasonable progression across the three levels."
+                ]
+              }
+            }
+          },
+          "endedAt": 1781744080418
+        }
+      },
+      "input": {
+        "id": "ht-mean-known-variance-jellyfish-diameter-left-tailed-alpha-0.05",
+        "topic": "hypothesis-test-mean-known-variance",
+        "subtopic": "left-tailed",
+        "context": {
+          "setting": "marine biology survey",
+          "individualDescription": "one jellyfish measured during a coastal survey",
+          "variableDescription": "bell diameter",
+          "unit": "cm",
+          "tone": "scientific field-study context",
+          "variationProfile": {
+            "openingStyle": "marine survey scenario",
+            "toneGuidance": "Use scientific field-study language while keeping the inference task understandable.",
+            "vocabularySuggestions": [
+              "jellyfish",
+              "bell diameter",
+              "marine survey",
+              "population mean",
+              "z test"
+            ],
+            "seedPhraseInContext": "A marine biology team measures jellyfish bell diameters during a coastal survey.",
+            "avoidPhrases": [
+              "jellyfish invasion",
+              "ocean mystery"
+            ],
+            "contextDetails": [
+              "Each observation is the bell diameter of one jellyfish.",
+              "The population standard deviation is treated as known from previous survey records.",
+              "The goal is to test a claim about the true mean bell diameter."
+            ]
+          }
+        },
+        "parameter": {
+          "symbol": "mu",
+          "description": "the true mean bell diameter for jellyfish in the surveyed population"
+        },
+        "nullHypothesis": {
+          "parameterSymbol": "mu",
+          "claimedValue": 25,
+          "operator": "="
+        },
+        "alternativeHypothesis": {
+          "parameterSymbol": "mu",
+          "operator": "<",
+          "direction": "left"
+        },
+        "populationStandardDeviation": {
+          "symbol": "sigma",
+          "value": 6,
+          "unit": "cm",
+          "known": true
+        },
+        "sample": {
+          "sampleSize": 50,
+          "sampleMean": 23.4
+        },
+        "question": {
+          "type": "left-tailed",
+          "significanceLevel": 0.05
+        },
+        "method": {
+          "testFamily": "z",
+          "testStatisticFormula": "(x-bar - mu0) / (sigma / sqrt(n))",
+          "standardErrorFormula": "sigma / sqrt(n)",
+          "pValueDirection": "left-tail"
+        },
+        "learningGoals": [
+          "Identify the population mean as the parameter being tested.",
+          "State null and alternative hypotheses for a claim about a population mean.",
+          "Distinguish left-tailed, right-tailed, and two-tailed tests.",
+          "Recognize that a z test is appropriate when the population standard deviation is known.",
+          "Calculate the P-value of the test statistic using the correct tail(s) based on the alternative hypothesis.",
+          "Make a decision about the null hypothesis based on the significance level and p-value.",
+          "Use the sample mean, known population standard deviation, and sample size to conduct the test.",
+          "Interpret the decision and conclusion in context."
+        ],
+        "invariantFacts": [
+          "The parameter is the true mean bell diameter for jellyfish in the surveyed population.",
+          "The null claim value is 25 cm.",
+          "The null hypothesis is mu = 25.",
+          "The alternative hypothesis is mu < 25.",
+          "The population standard deviation is known and equals 6 cm.",
+          "The sample size is 50.",
+          "The sample mean is 23.4 cm.",
+          "The significance level is 0.05.",
+          "The method uses a z test because the population standard deviation is known.",
+          "The p-value direction is left-tail.",
+          "The question asks students to test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm."
+        ],
+        "requiredTasks": [
+          "Identify the population mean being tested.",
+          "State the null hypothesis.",
+          "State the alternative hypothesis.",
+          "Identify the known population standard deviation.",
+          "Identify the sample mean.",
+          "Identify the sample size.",
+          "Identify the significance level.",
+          "Use a z test statistic.",
+          "Calculate the p-value using the correct tail direction.",
+          "Make a decision about the null hypothesis.",
+          "Write a conclusion in context.",
+          "Use a left-tailed alternative hypothesis."
+        ]
+      },
+      "stepExecutionPath": [
+        "generate-hypothesis-test-mean-known-variance-language-variants",
+        "validate-hypothesis-test-mean-known-variance-math-invariants",
+        "evaluate-hypothesis-test-mean-known-variance-register",
+        "compute-hypothesis-test-mean-known-variance-readability-metrics",
+        "assess-hypothesis-test-mean-known-variance-readability-targets"
+      ],
+      "result": {
+        "variants": {
+          "beginner": {
+            "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each measurement is for one jellyfish. The team wants to test the true average bell diameter. This true average is the population mean. The null claim says the population mean is 25 cm. The alternative claim says the population mean is less than 25 cm. Previous survey records show a known population standard deviation of 6 cm. The team measures 50 jellyfish. The sample mean is 23.4 cm. Use a 0.05 significance level. Because the population standard deviation is known, use a z test. State the null and alternative claims in words. Conduct the hypothesis test. Find the p-value using the left tail. Write a conclusion in the survey context.",
+            "linguisticNotes": [
+              "Uses short sentences and familiar wording such as “true average” before introducing “population mean.”",
+              "States the null claim and the less-than alternative in separate sentences.",
+              "Explicitly says to use a z test because the population standard deviation is known."
+            ]
+          },
+          "intermediate": {
+            "problemText": "A marine biology team measures jellyfish bell diameters during a coastal survey. Each observation is the bell diameter of one jellyfish. Previous survey records indicate that the population standard deviation is known to be 6 cm. In a sample of 50 jellyfish, the sample mean bell diameter is 23.4 cm. At the 0.05 significance level, test whether the true mean bell diameter for jellyfish in the surveyed population is less than 25 cm. State the null and alternative hypotheses in words, calculate the p-value, make a decision about the null hypothesis, and write a conclusion in context.",
+            "linguisticNotes": [
+              "Uses standard introductory statistics language, including population mean, sample mean, significance level, p-value, and null hypothesis.",
+              "Avoids symbolic notation and states all quantities in words.",
+              "Gives the known population standard deviation so the z-test setting is clear without an explicit method command."
+            ]
+          },
+          "advanced": {
+            "problemText": "During a coastal marine survey, researchers evaluate whether the target mean bell diameter of 25 cm overstates the true mean for the surveyed jellyfish population. The measured variable is the bell diameter of an individual jellyfish, and prior survey records treat the population standard deviation as known at 6 cm. The current sample includes 50 jellyfish with a sample mean bell diameter of 23.4 cm. At the 0.05 significance level, formulate the null and left-tailed alternative claims, test whether the data provide evidence that the true mean bell diameter is less than 25 cm, determine the appropriate p-value, and draw a conclusion in the marine survey context.",
+            "linguisticNotes": [
+              "Foregrounds the inferential purpose by framing 25 cm as a target mean being evaluated.",
+              "Uses denser scientific and statistical phrasing while avoiding Greek-letter notation.",
+              "Maintains the known-standard-deviation condition, which identifies the one-sample z-test framework without giving calculations."
+            ]
+          }
+        },
+        "mathValidation": {
+          "beginner": {
+            "passes": true,
+            "issues": [],
+            "invariantChecks": {
+              "distributionPreserved": true,
+              "randomVariablePreserved": true,
+              "meanPreserved": true,
+              "standardDeviationPreserved": true,
+              "questionTypePreserved": true,
+              "questionValuesPreserved": true,
+              "directionOrTailPreserved": true
+            }
+          },
+          "intermediate": {
+            "passes": true,
+            "issues": [],
+            "invariantChecks": {
+              "distributionPreserved": true,
+              "randomVariablePreserved": true,
+              "meanPreserved": true,
+              "standardDeviationPreserved": true,
+              "questionTypePreserved": true,
+              "questionValuesPreserved": true,
+              "directionOrTailPreserved": true
+            }
+          },
+          "advanced": {
+            "passes": true,
+            "issues": [],
+            "invariantChecks": {
+              "distributionPreserved": true,
+              "randomVariablePreserved": true,
+              "meanPreserved": true,
+              "standardDeviationPreserved": true,
+              "questionTypePreserved": true,
+              "questionValuesPreserved": true,
+              "directionOrTailPreserved": true
+            }
+          }
+        },
+        "registerEvaluation": {
+          "beginner": {
+            "targetLevel": "beginner",
+            "passes": true,
+            "scores": {
+              "lexicalDifficulty": 2,
+              "syntacticComplexity": 1.5,
+              "mathematicalExplicitness": 2,
+              "register": 2,
+              "referentialCohesion": 2,
+              "conceptualDensity": 2
+            },
+            "strengths": [
+              "Uses short, direct sentences that are appropriate for a beginner audience.",
+              "Introduces the phrase “population mean” by first using the more familiar phrase “true average.”",
+              "Separates the null claim, alternative claim, sample information, and task instructions clearly.",
+              "Repeats key nouns such as “team,” “population mean,” and “jellyfish,” which supports comprehension.",
+              "Uses clear instructional language and explicitly identifies the left-tail p-value and z-test setting."
+            ],
+            "concerns": [
+              "The sequence of many short sentences is very clear but slightly list-like.",
+              "The number of instructions at the end may feel dense for some beginners, even though each instruction is simply worded."
+            ],
+            "revisionAdvice": [
+              "The version is appropriate for the beginner target level.",
+              "If further simplification were needed, the final set of tasks could be broken into bullet points."
+            ]
+          },
+          "intermediate": {
+            "targetLevel": "intermediate",
+            "passes": true,
+            "scores": {
+              "lexicalDifficulty": 3,
+              "syntacticComplexity": 3,
+              "mathematicalExplicitness": 3,
+              "register": 3,
+              "referentialCohesion": 3,
+              "conceptualDensity": 3
+            },
+            "strengths": [
+              "Uses standard college statistics vocabulary, including “observation,” “population standard deviation,” “sample mean,” “significance level,” “p-value,” and “null hypothesis.”",
+              "The paragraph form resembles a typical introductory college statistics textbook problem.",
+              "Quantities are integrated smoothly while remaining easy to locate.",
+              "The task statement is concise but complete.",
+              "The language avoids unnecessary notation while maintaining statistical precision."
+            ],
+            "concerns": [
+              "The final sentence contains several requested actions in a single sentence, but this is acceptable for the intermediate level.",
+              "The phrase “surveyed population” is clear, though somewhat more formal than beginner language."
+            ],
+            "revisionAdvice": [
+              "The version is well matched to the intermediate target level.",
+              "No major language-level revision is needed."
+            ]
+          },
+          "advanced": {
+            "targetLevel": "advanced",
+            "passes": true,
+            "scores": {
+              "lexicalDifficulty": 4,
+              "syntacticComplexity": 4,
+              "mathematicalExplicitness": 4,
+              "register": 4,
+              "referentialCohesion": 4,
+              "conceptualDensity": 4
+            },
+            "strengths": [
+              "Uses an appropriately academic statistical register with phrases such as “target mean,” “overstates the true mean,” “left-tailed alternative claims,” and “provide evidence.”",
+              "The inferential purpose is foregrounded in a more sophisticated way than in the beginner and intermediate versions.",
+              "The syntax is denser and more varied, consistent with advanced academic problem statements.",
+              "The assumptions and sample information are compactly presented without becoming obscure.",
+              "The problem maintains clarity while increasing conceptual and linguistic density."
+            ],
+            "concerns": [
+              "The phrase “target mean bell diameter of 25 cm overstates the true mean” is more abstract than the lower-level versions, but it is appropriate for the advanced target.",
+              "The version is advanced in register but still relatively accessible because it avoids symbolic notation."
+            ],
+            "revisionAdvice": [
+              "The version is appropriate for the advanced target level.",
+              "If a more strongly advanced statistical style were desired, limited symbolic notation could be added, but it is not necessary for the current language profile."
+            ]
+          },
+          "overallProgression": {
+            "passes": true,
+            "notes": [
+              "The three versions show a clear progression from explicit instructional wording to standard college textbook language to denser academic statistical phrasing.",
+              "Lexical difficulty increases appropriately across the versions.",
+              "Syntactic complexity increases from short beginner sentences to moderate intermediate paragraph structure to more compact advanced clauses.",
+              "The beginner version prioritizes transparency, the intermediate version uses conventional introductory statistics language, and the advanced version adopts a more scientific inferential framing.",
+              "The progression is natural and not artificially obscure."
+            ]
+          }
+        },
+        "readabilityMetrics": {
+          "beginner": {
+            "wordCount": 122,
+            "sentenceCount": 15,
+            "averageSentenceLength": 8.13,
+            "longestSentenceLength": 12,
+            "characterCount": 602,
+            "syllableCount": 187,
+            "fleschReadingEase": 68.91,
+            "fleschKincaidGrade": 5.67,
+            "technicalTermCount": 12,
+            "quantityCount": 6,
+            "notes": []
+          },
+          "intermediate": {
+            "wordCount": 97,
+            "sentenceCount": 6,
+            "averageSentenceLength": 16.17,
+            "longestSentenceLength": 24,
+            "characterCount": 491,
+            "syllableCount": 156,
+            "fleschReadingEase": 54.37,
+            "fleschKincaidGrade": 9.69,
+            "technicalTermCount": 7,
+            "quantityCount": 5,
+            "notes": []
+          },
+          "advanced": {
+            "wordCount": 107,
+            "sentenceCount": 4,
+            "averageSentenceLength": 26.75,
+            "longestSentenceLength": 42,
+            "characterCount": 563,
+            "syllableCount": 174,
+            "fleschReadingEase": 42.11,
+            "fleschKincaidGrade": 14.03,
+            "technicalTermCount": 9,
+            "quantityCount": 6,
+            "notes": [
+              "At least one sentence is longer than 30 words."
+            ]
+          }
+        },
+        "readabilityTargetAssessment": {
+          "beginner": {
+            "targetLevel": "beginner",
+            "status": "warning",
+            "checks": {
+              "averageSentenceLength": {
+                "value": 8.13,
+                "target": "6–18 words",
+                "status": "passes"
+              },
+              "longestSentenceLength": {
+                "value": 12,
+                "target": "maximum 24 words",
+                "status": "passes"
+              },
+              "fleschKincaidGrade": {
+                "value": 5.67,
+                "target": "0–8.5",
+                "status": "passes"
+              },
+              "technicalTermCount": {
+                "value": 12,
+                "target": "0–11 terms",
+                "status": "warning"
+              }
+            },
+            "issues": [
+              "beginner: technical term count is outside the target range."
+            ],
+            "notes": []
+          },
+          "intermediate": {
+            "targetLevel": "intermediate",
+            "status": "passes",
+            "checks": {
+              "averageSentenceLength": {
+                "value": 16.17,
+                "target": "12–25 words",
+                "status": "passes"
+              },
+              "longestSentenceLength": {
+                "value": 24,
+                "target": "maximum 32 words",
+                "status": "passes"
+              },
+              "fleschKincaidGrade": {
+                "value": 9.69,
+                "target": "6.5–11.5",
+                "status": "passes"
+              },
+              "technicalTermCount": {
+                "value": 7,
+                "target": "2–10 terms",
+                "status": "passes"
+              }
+            },
+            "issues": [],
+            "notes": [
+              "intermediate: readability metrics are within the target range."
+            ]
+          },
+          "advanced": {
+            "targetLevel": "advanced",
+            "status": "passes",
+            "checks": {
+              "averageSentenceLength": {
+                "value": 26.75,
+                "target": "16–42 words",
+                "status": "passes"
+              },
+              "longestSentenceLength": {
+                "value": 42,
+                "target": "maximum 60 words",
+                "status": "passes"
+              },
+              "fleschKincaidGrade": {
+                "value": 14.03,
+                "target": "8.5–22",
+                "status": "passes"
+              },
+              "technicalTermCount": {
+                "value": 9,
+                "target": "6–14 terms",
+                "status": "passes"
+              }
+            },
+            "issues": [],
+            "notes": [
+              "At least one sentence is longer than 30 words.",
+              "advanced: readability metrics are within the target range."
+            ]
+          },
+          "overallProgression": {
+            "status": "passes",
+            "issues": [],
+            "notes": [
+              "The readability metrics show a reasonable progression across the three levels."
+            ]
+          }
+        }
+      }
+    }
+  }
+]

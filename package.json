@@ -24,10 +24,12 @@
     "@mastra/loggers": "^1.1.1",
     "@mastra/memory": "^1.20.0",
     "@mastra/observability": "^1.14.0",
+    "dotenv": "^17.4.2",
+    "fs": "0.0.1-security",
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.3",
     "mastra": "^1.10.2",
     "typescript": "^6.0.3"
   }

@@ -1,0 +1,269 @@
+import type { HypothesisTestMeanUnknownVarianceProblem } from '../schemas/hypothesisTestMeanUnknownVariance.schema';
+import { hypothesisTestMeanUnknownVarianceContexts } from '../contextSeeds/hypothesisTestMeanUnknownVarianceContexts';
+
+type HypothesisTestMeanUnknownVarianceQuestionType =
+  | 'left-tailed'
+  | 'right-tailed'
+  | 'two-tailed';
+
+type CreateHypothesisTestMeanUnknownVarianceProblemOptions = {
+  contextId: string;
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType;
+
+  significanceLevel?: number;
+  nullClaimValue?: number;
+  sampleSize?: number;
+  sampleMean?: number;
+  sampleStandardDeviation?: number;
+};
+
+function getSignificanceLevel(
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType,
+  significanceLevels: {
+    leftTailed: number;
+    rightTailed: number;
+    twoTailed: number;
+  },
+): number {
+  switch (questionType) {
+    case 'left-tailed':
+      return significanceLevels.leftTailed;
+
+    case 'right-tailed':
+      return significanceLevels.rightTailed;
+
+    case 'two-tailed':
+      return significanceLevels.twoTailed;
+  }
+}
+
+function getAlternativeOperator(
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType,
+): HypothesisTestMeanUnknownVarianceProblem['alternativeHypothesis']['operator'] {
+  switch (questionType) {
+    case 'left-tailed':
+      return '<';
+
+    case 'right-tailed':
+      return '>';
+
+    case 'two-tailed':
+      return '!=';
+  }
+}
+
+function getAlternativeDirection(
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType,
+): HypothesisTestMeanUnknownVarianceProblem['alternativeHypothesis']['direction'] {
+  switch (questionType) {
+    case 'left-tailed':
+      return 'left';
+
+    case 'right-tailed':
+      return 'right';
+
+    case 'two-tailed':
+      return 'two-sided';
+  }
+}
+
+function getPValueDirection(
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType,
+): HypothesisTestMeanUnknownVarianceProblem['method']['pValueDirection'] {
+  switch (questionType) {
+    case 'left-tailed':
+      return 'left-tail';
+
+    case 'right-tailed':
+      return 'right-tail';
+
+    case 'two-tailed':
+      return 'two-tail';
+  }
+}
+
+function buildQuestion(
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType,
+  significanceLevel: number,
+): HypothesisTestMeanUnknownVarianceProblem['question'] {
+  return {
+    type: questionType,
+    significanceLevel,
+  };
+}
+
+function buildQuestionDescription(
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType,
+  parameterDescription: string,
+  nullClaimValue: number,
+  unit?: string,
+): string {
+  const valueWithUnit = `${nullClaimValue}${unit ? ` ${unit}` : ''}`;
+
+  switch (questionType) {
+    case 'left-tailed':
+      return `test whether ${parameterDescription} is less than ${valueWithUnit}`;
+
+    case 'right-tailed':
+      return `test whether ${parameterDescription} is greater than ${valueWithUnit}`;
+
+    case 'two-tailed':
+      return `test whether ${parameterDescription} is different from ${valueWithUnit}`;
+  }
+}
+
+function buildRequiredTasks(
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType,
+): string[] {
+  const commonTasks = [
+    'Identify the population mean being tested.',
+    'State the null hypothesis.',
+    'State the alternative hypothesis.',
+    'Recognize that the population standard deviation is unknown.',
+    'Identify the sample mean.',
+    'Identify the sample size.',
+    'Identify the sample standard deviation.',
+    'Identify the significance level.',
+    'Use a t test statistic.',
+    'Calculate the degrees of freedom using n - 1.',
+    'Calculate the p-value using the correct tail direction.',
+    'Make a decision about the null hypothesis.',
+    'Write a conclusion in context.',
+  ];
+
+  switch (questionType) {
+    case 'left-tailed':
+      return [...commonTasks, 'Use a left-tailed alternative hypothesis.'];
+
+    case 'right-tailed':
+      return [...commonTasks, 'Use a right-tailed alternative hypothesis.'];
+
+    case 'two-tailed':
+      return [...commonTasks, 'Use a two-tailed alternative hypothesis.'];
+  }
+}
+
+export function createHypothesisTestMeanUnknownVarianceProblem(
+  options: CreateHypothesisTestMeanUnknownVarianceProblemOptions,
+): HypothesisTestMeanUnknownVarianceProblem {
+  const seed = hypothesisTestMeanUnknownVarianceContexts.find(
+    (context) => context.id === options.contextId,
+  );
+
+  if (!seed) {
+    throw new Error(
+      `No hypothesis test mean unknown variance context seed found for: ${options.contextId}`,
+    );
+  }
+
+  const significanceLevel =
+    options.significanceLevel ??
+    getSignificanceLevel(
+      options.questionType,
+      seed.suggestedSignificanceLevels,
+    );
+
+  const nullClaimValue = options.nullClaimValue ?? seed.nullClaimValue;
+
+  const sampleSize = options.sampleSize ?? seed.defaultSampleSize;
+
+  const sampleMean = options.sampleMean ?? seed.defaultSampleMean;
+
+  const sampleStandardDeviation =
+    options.sampleStandardDeviation ?? seed.defaultSampleStandardDeviation;
+
+  const degreesOfFreedom = sampleSize - 1;
+
+  const question = buildQuestion(options.questionType, significanceLevel);
+
+  const questionDescription = buildQuestionDescription(
+    options.questionType,
+    seed.parameterDescription,
+    nullClaimValue,
+    seed.context.unit,
+  );
+
+  return {
+    id: `ht-mean-unknown-variance-${seed.id}-${options.questionType}-alpha-${significanceLevel}`,
+
+    topic: 'hypothesis-test-mean-unknown-variance',
+
+    subtopic: options.questionType,
+
+    context: seed.context,
+
+    parameter: {
+      symbol: 'mu',
+      description: seed.parameterDescription,
+    },
+
+    nullHypothesis: {
+      parameterSymbol: 'mu',
+      claimedValue: nullClaimValue,
+      operator: '=',
+    },
+
+    alternativeHypothesis: {
+      parameterSymbol: 'mu',
+      operator: getAlternativeOperator(options.questionType),
+      direction: getAlternativeDirection(options.questionType),
+    },
+
+    populationStandardDeviation: {
+      symbol: 'sigma',
+      known: false,
+    },
+
+    sample: {
+      sampleSize,
+      sampleMean,
+      sampleStandardDeviation,
+    },
+
+    question,
+
+    method: {
+      testFamily: 't',
+      testStatisticFormula: '(x-bar - mu0) / (s / sqrt(n))',
+      standardErrorFormula: 's / sqrt(n)',
+      degreesOfFreedomFormula: 'n - 1',
+      pValueDirection: getPValueDirection(options.questionType),
+    },
+
+    learningGoals: [
+      'Identify the population mean as the parameter being tested.',
+      'State null and alternative hypotheses for a claim about a population mean.',
+      'Distinguish left-tailed, right-tailed, and two-tailed tests.',
+      'Recognize that a t test is appropriate when the population standard deviation is unknown.',
+      'Use the sample mean, sample standard deviation, and sample size to conduct the test.',
+      'Calculate the degrees of freedom for a one-sample t test.',
+      'Interpret the decision and conclusion in context.',
+    ],
+
+    invariantFacts: [
+      `The parameter is ${seed.parameterDescription}.`,
+      `The null claim value is ${nullClaimValue}${
+        seed.context.unit ? ` ${seed.context.unit}` : ''
+      }.`,
+      `The null hypothesis is mu = ${nullClaimValue}.`,
+      `The alternative hypothesis is mu ${getAlternativeOperator(
+        options.questionType,
+      )} ${nullClaimValue}.`,
+      'The population standard deviation is unknown.',
+      `The sample standard deviation is ${sampleStandardDeviation}${
+        seed.context.unit ? ` ${seed.context.unit}` : ''
+      }.`,
+      `The sample size is ${sampleSize}.`,
+      `The degrees of freedom are ${degreesOfFreedom}.`,
+      `The sample mean is ${sampleMean}${
+        seed.context.unit ? ` ${seed.context.unit}` : ''
+      }.`,
+      `The significance level is ${significanceLevel}.`,
+      `The method uses a t test because the population standard deviation is unknown.`,
+      `The p-value direction is ${getPValueDirection(options.questionType)}.`,
+      `The question asks students to ${questionDescription}.`,
+    ],
+
+    requiredTasks: buildRequiredTasks(options.questionType),
+  };
+}
