@@ -8,7 +8,9 @@ import { generatedConfidenceIntervalMeanUnknownVarianceCalibrationSet } from '..
 //   ),
 // );
 
+// Start - end [8]-[]
+
 const calibrationExamples =
-  generatedConfidenceIntervalMeanUnknownVarianceCalibrationSet[1]; //all examples
+  generatedConfidenceIntervalMeanUnknownVarianceCalibrationSet[37]; //all examples
 
 console.log(JSON.stringify(calibrationExamples, null, 2));
