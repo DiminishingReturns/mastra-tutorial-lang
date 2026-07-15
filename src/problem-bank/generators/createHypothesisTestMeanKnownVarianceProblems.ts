@@ -15,6 +15,9 @@ type CreateHypothesisTestMeanKnownVarianceProblemOptions = {
   populationStandardDeviation?: number;
   sampleSize?: number;
   sampleMean?: number;
+
+  expectedDecision?: 'reject-null' | 'fail-to-reject-null';
+  evidenceStrength?: 'strong' | 'borderline' | 'weak';
 };
 
 function getSignificanceLevel(
@@ -141,6 +144,98 @@ function buildRequiredTasks(
   }
 }
 
+function getApproximateCriticalZ({
+  questionType,
+  significanceLevel,
+}: {
+  questionType: HypothesisTestMeanKnownVarianceQuestionType;
+  significanceLevel: number;
+}): number {
+  const alpha = significanceLevel;
+
+  if (questionType === 'two-tailed') {
+    if (alpha === 0.2) return 1.28;
+    if (alpha === 0.1) return 1.645;
+    if (alpha === 0.05) return 1.96;
+    if (alpha === 0.02) return 2.33;
+    if (alpha === 0.01) return 2.575;
+    if (alpha === 0.001) return 3.29;
+  }
+
+  if (questionType === 'left-tailed' || questionType === 'right-tailed') {
+    if (alpha === 0.2) return 0.84;
+    if (alpha === 0.1) return 1.28;
+    if (alpha === 0.05) return 1.645;
+    if (alpha === 0.02) return 2.05;
+    if (alpha === 0.01) return 2.33;
+    if (alpha === 0.001) return 3.09;
+  }
+
+  // Safe fallback for the common 5% case.
+  return questionType === 'two-tailed' ? 1.96 : 1.645;
+}
+
+function chooseSampleMeanForExpectedDecision({
+  questionType,
+  expectedDecision,
+  evidenceStrength = 'strong',
+  nullClaimValue,
+  populationStandardDeviation,
+  sampleSize,
+  significanceLevel,
+}: {
+  questionType: HypothesisTestMeanKnownVarianceQuestionType;
+  expectedDecision: 'reject-null' | 'fail-to-reject-null';
+  evidenceStrength?: 'strong' | 'borderline' | 'weak';
+  nullClaimValue: number;
+  populationStandardDeviation: number;
+  sampleSize: number;
+  significanceLevel: number;
+}): number {
+  const standardError = populationStandardDeviation / Math.sqrt(sampleSize);
+
+  const criticalZ = getApproximateCriticalZ({
+    questionType,
+    significanceLevel,
+  });
+
+  const offsetFromCritical = {
+    'reject-null': {
+      strong: 0.75,
+      borderline: 0.15,
+      weak: 0.35,
+    },
+    'fail-to-reject-null': {
+      strong: -1.0,
+      borderline: -0.15,
+      weak: -0.5,
+    },
+  } as const;
+
+  const zMagnitude =
+    criticalZ + offsetFromCritical[expectedDecision][evidenceStrength];
+
+  let signedZ: number;
+
+  switch (questionType) {
+    case 'left-tailed':
+      signedZ = -zMagnitude;
+      break;
+
+    case 'right-tailed':
+      signedZ = zMagnitude;
+      break;
+
+    case 'two-tailed':
+      signedZ = zMagnitude;
+      break;
+  }
+
+  const sampleMean = nullClaimValue + signedZ * standardError;
+
+  return Number(sampleMean.toFixed(2));
+}
+
 export function createHypothesisTestMeanKnownVarianceProblem(
   options: CreateHypothesisTestMeanKnownVarianceProblemOptions,
 ): HypothesisTestMeanKnownVarianceProblem {
@@ -163,13 +258,28 @@ export function createHypothesisTestMeanKnownVarianceProblem(
 
   const nullClaimValue = options.nullClaimValue ?? seed.nullClaimValue;
 
+  // reject-null        → farther from null
+  // fail-to-reject     → closer to null
+
   const populationStandardDeviation =
     options.populationStandardDeviation ??
     seed.knownPopulationStandardDeviation;
 
   const sampleSize = options.sampleSize ?? seed.defaultSampleSize;
 
-  const sampleMean = options.sampleMean ?? seed.defaultSampleMean;
+  const sampleMean =
+    options.sampleMean ??
+    (options.expectedDecision
+      ? chooseSampleMeanForExpectedDecision({
+          questionType: options.questionType,
+          expectedDecision: options.expectedDecision,
+          evidenceStrength: options.evidenceStrength,
+          nullClaimValue,
+          populationStandardDeviation,
+          sampleSize,
+          significanceLevel,
+        })
+      : seed.defaultSampleMean);
 
   const question = buildQuestion(options.questionType, significanceLevel);
 
@@ -226,6 +336,13 @@ export function createHypothesisTestMeanKnownVarianceProblem(
       standardErrorFormula: 'sigma / sqrt(n)',
       pValueDirection: getPValueDirection(options.questionType),
     },
+
+    solutionMetadata: options.expectedDecision
+      ? {
+          expectedDecision: options.expectedDecision,
+          evidenceStrength: options.evidenceStrength,
+        }
+      : undefined,
 
     learningGoals: [
       'Identify the population mean as the parameter being tested.',
