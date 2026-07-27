@@ -347,4 +347,370 @@ export const hypothesisTestProportionContexts: HypothesisTestProportionContextSe
         twoTailed: 0.1,
       },
     },
+    // End of context seeds for calibration set. Start of course contexts.
+
+    {
+      id: 'godzilla-movie',
+      context: {
+        setting: 'entertainment survey',
+        individualDescription: 'one person surveyed',
+        successDescription: 'number of people who have seen a Godzilla movie',
+        failureDescription:
+          'number of people who have not seen a Godzilla movie',
+        tone: 'entertainment survey context',
+        variationProfile: {
+          openingStyle: 'entertainment survey scenario',
+          toneGuidance:
+            'Use casual entertainment survey language while keeping the inference task understandable.',
+          vocabularySuggestions: [
+            'Godzilla movie',
+            'survey',
+            'sample proportion',
+            'population proportion',
+          ],
+          seedPhraseInContext:
+            'In 2015, Godzilla was recruited as the tourism ambassador for the Shinjuku suburb of Tokyo, despite having flattened the area in three separate films.',
+          avoidPhrases: [],
+          contextDetails: [
+            'The goal is to test a claim about the true proportion of people who have seen a Godzilla movie.',
+          ],
+        },
+      },
+      parameterDescription:
+        'the true proportion of people who have seen a Godzilla movie',
+      nullClaimValue: 0.3,
+      defaultSampleSize: 150,
+      defaultSuccessCount: 45,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.05,
+        rightTailed: 0.05,
+        twoTailed: 0.05,
+      },
+    },
+
+    {
+      id: 'funeral-crying',
+      context: {
+        setting: 'social behavior survey',
+        individualDescription: 'one person surveyed',
+        successDescription: 'number of people who cry at funerals',
+        failureDescription: 'number of people who do not cry at funerals',
+        tone: 'social behavior survey context',
+        variationProfile: {
+          openingStyle: 'social behavior survey scenario',
+          toneGuidance:
+            'Use casual social behavior survey language while keeping the inference task understandable.',
+          vocabularySuggestions: [
+            'funeral',
+            'crying',
+            'survey',
+            'sample proportion',
+            'population proportion',
+          ],
+          seedPhraseInContext:
+            'Timothy Dexter was an 18th century American businessman who faked his own funeral to see who would turn up. Afterwards, he accused his wife of not crying enough.',
+          avoidPhrases: [],
+          contextDetails: [
+            'The goal is to test a claim about the true proportion of people who cry at funerals.',
+          ],
+        },
+      },
+      parameterDescription: 'the true proportion of people who cry at funerals',
+      nullClaimValue: 0.4,
+      defaultSampleSize: 100,
+      defaultSuccessCount: 40,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.025,
+        rightTailed: 0.025,
+        twoTailed: 0.05,
+      },
+    },
+
+    {
+      id: 'fake-online-stores',
+      context: {
+        setting: 'online shopping behavior survey',
+        individualDescription: 'one person surveyed',
+        successDescription:
+          'number of people who have shopped at fake online stores',
+        failureDescription:
+          'number of people who have not shopped at fake online stores',
+        tone: '',
+        variationProfile: {
+          openingStyle: '',
+          toneGuidance:
+            'Use casual online shopping behavior survey language while keeping the inference task understandable.',
+          vocabularySuggestions: [
+            'fake online stores',
+            'dopamine sites',
+            'online shopping',
+          ],
+          seedPhraseInContext:
+            'Fake online stores called ‘dopamine sites’ have been gaining popularity in South Korea, allowing shopping addicts to replicate the experience of buying items online without spending any money. You can even track the imaginary items you’ve bought.',
+          avoidPhrases: [],
+          contextDetails: [
+            'The goal is to test a claim about the true proportion of people who have shopped at fake online stores.',
+          ],
+        },
+      },
+      parameterDescription:
+        'the true proportion of people who have shopped at fake online stores',
+      nullClaimValue: 0.3,
+      defaultSampleSize: 120,
+      defaultSuccessCount: 36,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.01,
+        rightTailed: 0.01,
+        twoTailed: 0.01,
+      },
+    },
+
+    {
+      id: 'dog-snack-liking',
+      context: {
+        setting: 'dog behavior study',
+        individualDescription: 'one dog being observed',
+        successDescription: 'number of dogs who like snacks',
+        failureDescription: 'number of dogs who do not like snacks',
+        tone: '',
+        variationProfile: {
+          openingStyle: '',
+          toneGuidance: '',
+          vocabularySuggestions: [],
+          seedPhraseInContext:
+            'There’s a theory that dogs domesticated themselves because they really liked snacks.',
+          avoidPhrases: [],
+          contextDetails: [],
+        },
+      },
+      parameterDescription: 'the true proportion of dogs who like snacks',
+      nullClaimValue: 0.95,
+      defaultSampleSize: 50,
+      defaultSuccessCount: 48,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.005,
+        rightTailed: 0.005,
+        twoTailed: 0.01,
+      },
+    },
+
+    {
+      id: 'rat-basketball-playing',
+      context: {
+        setting: 'Science Museum of Virginia',
+        individualDescription: 'one rat being observed',
+        successDescription: 'number of rats who can play basketball',
+        failureDescription: 'number of rats who cannot play basketball',
+        tone: 'casual science museum context',
+        variationProfile: {
+          openingStyle: '',
+          toneGuidance:
+            'Use casual science museum context language while keeping the inference task understandable.',
+          vocabularySuggestions: [],
+          seedPhraseInContext:
+            'The Science Museum of Virginia has trained rats to play basketball. Daily matches can be watched by the public.',
+          avoidPhrases: [],
+          contextDetails: [
+            'The goal is to test a claim about the true proportion of rats who can play basketball.',
+          ],
+        },
+      },
+      parameterDescription:
+        'the true proportion of rats who can play basketball',
+      nullClaimValue: 0.5,
+      defaultSampleSize: 20,
+      defaultSuccessCount: 10,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.05,
+        rightTailed: 0.05,
+        twoTailed: 0.05,
+      },
+    },
+
+    {
+      id: 'luxury-car-drivers',
+      context: {
+        setting: 'city streets',
+        individualDescription: 'one driver of a luxury car',
+        successDescription:
+          'number of drivers of luxury cars who cut off other drivers',
+        failureDescription:
+          'number of drivers of luxury cars who do not cut off other drivers',
+        tone: 'informal urban context',
+        variationProfile: {
+          openingStyle: '',
+          toneGuidance:
+            'Use informal urban context language while keeping the inference task understandable.',
+          vocabularySuggestions: [],
+          seedPhraseInContext:
+            'Drivers of luxury cars are more likely to cut off other drivers.',
+          avoidPhrases: [],
+          contextDetails: [
+            'The goal is to test a claim about the true proportion of drivers of luxury cars who cut off other drivers.',
+          ],
+        },
+      },
+      parameterDescription:
+        'the true proportion of drivers of luxury cars who cut off other drivers',
+      nullClaimValue: 0.8,
+      defaultSampleSize: 40,
+      defaultSuccessCount: 32,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.025,
+        rightTailed: 0.025,
+        twoTailed: 0.05,
+      },
+    },
+
+    {
+      id: 'paris-syndrome',
+      context: {
+        setting: 'Paris, France',
+        individualDescription: 'one Japanese traveller',
+        successDescription:
+          'number of Japanese travellers who experience Paris syndrome',
+        failureDescription:
+          'number of Japanese travellers who do not experience Paris syndrome',
+        tone: '',
+        variationProfile: {
+          openingStyle: '',
+          toneGuidance: '',
+          vocabularySuggestions: [
+            'Paris syndrome',
+            'Japanese travellers',
+            'cultural shock',
+            'population proportion',
+            'hypothesis test',
+          ],
+          seedPhraseInContext:
+            'Japanese travellers sometimes experience `Paris syndrome`, which occurs as a result of extreme shock at discovering that Paris is different than expected. Symptoms may include acute delusional states, hallucinations, feelings of persecution, dizziness, and vomiting.',
+          avoidPhrases: [],
+          contextDetails: [
+            'The goal is to test a claim about the true proportion of Japanese travellers who experience Paris syndrome.',
+          ],
+        },
+      },
+      parameterDescription:
+        'the true proportion of Japanese travellers who experience Paris syndrome',
+      nullClaimValue: 0.05,
+      defaultSampleSize: 150,
+      defaultSuccessCount: 8,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.01,
+        rightTailed: 0.01,
+        twoTailed: 0.01,
+      },
+    },
+
+    {
+      id: 'cat-wiggle',
+      context: {
+        setting: 'cat behavior observation',
+        individualDescription: 'a cat being observed before pouncing',
+        successDescription:
+          'number of cats who wiggle their bottoms before pouncing',
+        failureDescription:
+          'number of cats who do not wiggle their bottoms before pouncing',
+        tone: 'informal animal behavior context',
+        variationProfile: {
+          openingStyle: '',
+          toneGuidance:
+            'Use informal animal behavior context language while keeping the inference task understandable.',
+          vocabularySuggestions: [
+            'cat behavior',
+            'pouncing',
+            'population proportion',
+            'hypothesis test',
+          ],
+          seedPhraseInContext:
+            'Nobody knows why cats wiggle their bottoms before they pounce.',
+          avoidPhrases: [],
+          contextDetails: [
+            'The goal is to test a claim about the true proportion of cats who wiggle their bottoms before pouncing.',
+          ],
+        },
+      },
+      parameterDescription:
+        'the true proportion of cats who wiggle their bottoms before pouncing',
+      nullClaimValue: 0.3,
+      defaultSampleSize: 50,
+      defaultSuccessCount: 15,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.005,
+        rightTailed: 0.005,
+        twoTailed: 0.01,
+      },
+    },
+
+    {
+      id: 'jean-pocket-size',
+      context: {
+        setting: 'fashion study',
+        individualDescription: 'a woman trying on jeans',
+        successDescription:
+          'number of women whose jean front pockets are big enough to fit an average woman`s hand',
+        failureDescription:
+          'number of women whose jean front pockets are not big enough to fit an average woman`s hand',
+        tone: 'informal fashion context',
+        variationProfile: {
+          openingStyle: '',
+          toneGuidance:
+            'Use informal fashion context language while keeping the inference task understandable.',
+          vocabularySuggestions: [],
+          seedPhraseInContext:
+            'A recent study of jean front pockets found that only 10% of women`s pockets are big enough to fit an average woman`s hand. 100% of men`s pockets could fit an average man`s hand.',
+          avoidPhrases: [],
+          contextDetails: [
+            'The goal is to test a claim about the true proportion of women whose jean front pockets are big enough to fit an average woman`s hand.',
+          ],
+        },
+      },
+      parameterDescription:
+        'the true proportion of women whose jean front pockets are big enough to fit an average woman`s hand',
+      nullClaimValue: 0.1,
+      defaultSampleSize: 150,
+      defaultSuccessCount: 15,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.05,
+        rightTailed: 0.05,
+        twoTailed: 0.005,
+      },
+    },
+
+    {
+      id: 'moth-pollination',
+      context: {
+        setting: 'ecology study',
+        individualDescription: 'a moth being observed for pollination behavior',
+        successDescription: 'number of moths that carry pollen',
+        failureDescription: 'number of moths that do not carry pollen',
+        tone: 'informal ecology study context',
+        variationProfile: {
+          openingStyle: '',
+          toneGuidance:
+            'Use informal ecology study context language while keeping the inference task understandable.',
+          vocabularySuggestions: [
+            'moth',
+            'pollination',
+            'population proportion',
+            'hypothesis test',
+          ],
+          seedPhraseInContext:
+            'Moths are crucial pollinators. 45% of moths carry pollen, generally taking the night shift while bees and other insects are resting.',
+          avoidPhrases: [],
+          contextDetails: [
+            'The goal is to test a claim about the true proportion of moths that carry pollen.',
+          ],
+        },
+      },
+      parameterDescription: 'the true proportion of moths that carry pollen',
+      nullClaimValue: 0.45,
+      defaultSampleSize: 100,
+      defaultSuccessCount: 45,
+      suggestedSignificanceLevels: {
+        leftTailed: 0.05,
+        rightTailed: 0.05,
+        twoTailed: 0.005,
+      },
+    },
   ];

@@ -90,6 +90,13 @@ export const hypothesisTestMeanUnknownVarianceProblemSchema = z.object({
     pValueDirection: z.enum(['left-tail', 'right-tail', 'two-tail']),
   }),
 
+  solutionMetadata: z
+    .object({
+      expectedDecision: z.enum(['reject-null', 'fail-to-reject-null']),
+      evidenceStrength: z.enum(['strong', 'borderline', 'weak']).optional(),
+    })
+    .optional(),
+
   learningGoals: z.array(z.string()),
 
   invariantFacts: z.array(z.string()),

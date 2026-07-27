@@ -15,6 +15,9 @@ type CreateHypothesisTestMeanUnknownVarianceProblemOptions = {
   sampleSize?: number;
   sampleMean?: number;
   sampleStandardDeviation?: number;
+
+  expectedDecision?: 'reject-null' | 'fail-to-reject-null';
+  evidenceStrength?: 'strong' | 'borderline' | 'weak';
 };
 
 function getSignificanceLevel(
@@ -143,6 +146,230 @@ function buildRequiredTasks(
   }
 }
 
+function getApproximateCriticalT({
+  questionType,
+  significanceLevel,
+  degreesOfFreedom,
+}: {
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType;
+  significanceLevel: number;
+  degreesOfFreedom: number;
+}): number {
+  const alpha = significanceLevel;
+
+  // Simple table for common alpha levels and typical df ranges.
+  // These are approximate but good enough for generating pedagogical examples.
+
+  if (questionType === 'two-tailed') {
+    if (alpha === 0.1) {
+      if (degreesOfFreedom <= 10) return 1.812;
+      if (degreesOfFreedom <= 20) return 1.725;
+      if (degreesOfFreedom <= 30) return 1.697;
+      if (degreesOfFreedom <= 40) return 1.684;
+      if (degreesOfFreedom <= 50) return 1.676;
+      if (degreesOfFreedom <= 60) return 1.671;
+      if (degreesOfFreedom <= 70) return 1.667;
+      if (degreesOfFreedom <= 80) return 1.664;
+      if (degreesOfFreedom <= 90) return 1.662;
+      if (degreesOfFreedom <= 100) return 1.66;
+      return 1.645;
+    }
+
+    if (alpha === 0.05) {
+      if (degreesOfFreedom <= 10) return 2.228;
+      if (degreesOfFreedom <= 20) return 2.086;
+      if (degreesOfFreedom <= 30) return 2.042;
+      if (degreesOfFreedom <= 40) return 2.021;
+      if (degreesOfFreedom <= 50) return 2.009;
+      if (degreesOfFreedom <= 60) return 2.0;
+      if (degreesOfFreedom <= 70) return 1.994;
+      if (degreesOfFreedom <= 80) return 1.99;
+      if (degreesOfFreedom <= 90) return 1.987;
+      if (degreesOfFreedom <= 100) return 1.984;
+      return 1.96;
+    }
+    if (alpha === 0.025) {
+      if (degreesOfFreedom <= 10) return 2.228;
+      if (degreesOfFreedom <= 20) return 2.086;
+      if (degreesOfFreedom <= 30) return 2.042;
+      if (degreesOfFreedom <= 40) return 2.021;
+      if (degreesOfFreedom <= 50) return 2.009;
+      if (degreesOfFreedom <= 60) return 2.0;
+      if (degreesOfFreedom <= 70) return 1.994;
+      if (degreesOfFreedom <= 80) return 1.99;
+      if (degreesOfFreedom <= 90) return 1.987;
+      if (degreesOfFreedom <= 100) return 1.984;
+      return 1.96;
+    }
+
+    if (alpha === 0.01) {
+      if (degreesOfFreedom <= 10) return 3.169;
+      if (degreesOfFreedom <= 20) return 2.845;
+      if (degreesOfFreedom <= 30) return 2.75;
+      if (degreesOfFreedom <= 40) return 2.704;
+      if (degreesOfFreedom <= 50) return 2.678;
+      if (degreesOfFreedom <= 60) return 2.66;
+      if (degreesOfFreedom <= 70) return 2.648;
+      if (degreesOfFreedom <= 80) return 2.639;
+      if (degreesOfFreedom <= 90) return 2.632;
+      if (degreesOfFreedom <= 100) return 2.626;
+      return 2.576;
+    }
+    if (alpha === 0.005) {
+      if (degreesOfFreedom <= 10) return 3.169;
+      if (degreesOfFreedom <= 20) return 2.845;
+      if (degreesOfFreedom <= 30) return 2.75;
+      if (degreesOfFreedom <= 40) return 2.704;
+      if (degreesOfFreedom <= 50) return 2.678;
+      if (degreesOfFreedom <= 60) return 2.66;
+      if (degreesOfFreedom <= 70) return 2.648;
+      if (degreesOfFreedom <= 80) return 2.639;
+      if (degreesOfFreedom <= 90) return 2.632;
+      if (degreesOfFreedom <= 100) return 2.626;
+      return 2.576;
+    }
+  }
+
+  if (questionType === 'left-tailed' || questionType === 'right-tailed') {
+    if (alpha === 0.1) {
+      if (degreesOfFreedom <= 10) return 1.372;
+      if (degreesOfFreedom <= 20) return 1.325;
+      if (degreesOfFreedom <= 30) return 1.31;
+      if (degreesOfFreedom <= 40) return 1.303;
+      if (degreesOfFreedom <= 50) return 1.299;
+      if (degreesOfFreedom <= 60) return 1.296;
+      if (degreesOfFreedom <= 70) return 1.294;
+      if (degreesOfFreedom <= 80) return 1.292;
+      if (degreesOfFreedom <= 90) return 1.291;
+      if (degreesOfFreedom <= 100) return 1.29;
+      return 1.282;
+    }
+
+    if (alpha === 0.05) {
+      if (degreesOfFreedom <= 10) return 1.812;
+      if (degreesOfFreedom <= 20) return 1.725;
+      if (degreesOfFreedom <= 30) return 1.697;
+      if (degreesOfFreedom <= 40) return 1.684;
+      if (degreesOfFreedom <= 50) return 1.676;
+      if (degreesOfFreedom <= 60) return 1.671;
+      if (degreesOfFreedom <= 70) return 1.667;
+      if (degreesOfFreedom <= 80) return 1.664;
+      if (degreesOfFreedom <= 90) return 1.662;
+      if (degreesOfFreedom <= 100) return 1.66;
+      return 1.645;
+    }
+
+    if (alpha === 0.025) {
+      if (degreesOfFreedom <= 10) return 2.228;
+      if (degreesOfFreedom <= 20) return 2.086;
+      if (degreesOfFreedom <= 30) return 2.042;
+      if (degreesOfFreedom <= 40) return 2.021;
+      if (degreesOfFreedom <= 50) return 2.009;
+      if (degreesOfFreedom <= 60) return 2.0;
+      if (degreesOfFreedom <= 70) return 1.994;
+      if (degreesOfFreedom <= 80) return 1.99;
+      if (degreesOfFreedom <= 90) return 1.987;
+      if (degreesOfFreedom <= 100) return 1.984;
+      return 1.96;
+    }
+
+    if (alpha === 0.01) {
+      if (degreesOfFreedom <= 10) return 2.764;
+      if (degreesOfFreedom <= 20) return 2.528;
+      if (degreesOfFreedom <= 30) return 2.457;
+      if (degreesOfFreedom <= 40) return 2.423;
+      if (degreesOfFreedom <= 50) return 2.403;
+      if (degreesOfFreedom <= 60) return 2.39;
+      if (degreesOfFreedom <= 70) return 2.381;
+      if (degreesOfFreedom <= 80) return 2.374;
+      if (degreesOfFreedom <= 90) return 2.368;
+      if (degreesOfFreedom <= 100) return 2.364;
+      return 2.326;
+    }
+
+    if (alpha === 0.005) {
+      if (degreesOfFreedom <= 10) return 3.169;
+      if (degreesOfFreedom <= 20) return 2.845;
+      if (degreesOfFreedom <= 30) return 2.75;
+      if (degreesOfFreedom <= 40) return 2.704;
+      if (degreesOfFreedom <= 50) return 2.678;
+      if (degreesOfFreedom <= 60) return 2.66;
+      if (degreesOfFreedom <= 70) return 2.648;
+      if (degreesOfFreedom <= 80) return 2.639;
+      if (degreesOfFreedom <= 90) return 2.632;
+      if (degreesOfFreedom <= 100) return 2.626;
+      return 2.576;
+    }
+  }
+
+  // Safe fallback for common 5% cases.
+  return questionType === 'two-tailed' ? 2.042 : 1.697;
+}
+
+function chooseSampleMeanForExpectedDecision({
+  questionType,
+  expectedDecision,
+  evidenceStrength = 'strong',
+  nullClaimValue,
+  sampleStandardDeviation,
+  sampleSize,
+  significanceLevel,
+}: {
+  questionType: HypothesisTestMeanUnknownVarianceQuestionType;
+  expectedDecision: 'reject-null' | 'fail-to-reject-null';
+  evidenceStrength?: 'strong' | 'borderline' | 'weak';
+  nullClaimValue: number;
+  sampleStandardDeviation: number;
+  sampleSize: number;
+  significanceLevel: number;
+}): number {
+  const degreesOfFreedom = sampleSize - 1;
+
+  const standardError = sampleStandardDeviation / Math.sqrt(sampleSize);
+
+  const criticalT = getApproximateCriticalT({
+    questionType,
+    significanceLevel,
+    degreesOfFreedom,
+  });
+
+  const offsetFromCritical = {
+    'reject-null': {
+      strong: 0.75,
+      borderline: 0.15,
+      weak: 0.35,
+    },
+    'fail-to-reject-null': {
+      strong: -1.0,
+      borderline: -0.15,
+      weak: -0.5,
+    },
+  } as const;
+
+  const tMagnitude =
+    criticalT + offsetFromCritical[expectedDecision][evidenceStrength];
+
+  let signedT: number;
+
+  switch (questionType) {
+    case 'left-tailed':
+      signedT = -tMagnitude;
+      break;
+
+    case 'right-tailed':
+      signedT = tMagnitude;
+      break;
+
+    case 'two-tailed':
+      signedT = tMagnitude;
+      break;
+  }
+
+  const sampleMean = nullClaimValue + signedT * standardError;
+
+  return Number(sampleMean.toFixed(2));
+}
+
 export function createHypothesisTestMeanUnknownVarianceProblem(
   options: CreateHypothesisTestMeanUnknownVarianceProblemOptions,
 ): HypothesisTestMeanUnknownVarianceProblem {
@@ -167,10 +394,22 @@ export function createHypothesisTestMeanUnknownVarianceProblem(
 
   const sampleSize = options.sampleSize ?? seed.defaultSampleSize;
 
-  const sampleMean = options.sampleMean ?? seed.defaultSampleMean;
-
   const sampleStandardDeviation =
     options.sampleStandardDeviation ?? seed.defaultSampleStandardDeviation;
+
+  const sampleMean =
+    options.sampleMean ??
+    (options.expectedDecision
+      ? chooseSampleMeanForExpectedDecision({
+          questionType: options.questionType,
+          expectedDecision: options.expectedDecision,
+          evidenceStrength: options.evidenceStrength,
+          nullClaimValue,
+          sampleStandardDeviation,
+          sampleSize,
+          significanceLevel,
+        })
+      : seed.defaultSampleMean);
 
   const degreesOfFreedom = sampleSize - 1;
 
@@ -229,6 +468,13 @@ export function createHypothesisTestMeanUnknownVarianceProblem(
       degreesOfFreedomFormula: 'n - 1',
       pValueDirection: getPValueDirection(options.questionType),
     },
+
+    solutionMetadata: options.expectedDecision
+      ? {
+          expectedDecision: options.expectedDecision,
+          evidenceStrength: options.evidenceStrength ?? 'strong',
+        }
+      : undefined,
 
     learningGoals: [
       'Identify the population mean as the parameter being tested.',

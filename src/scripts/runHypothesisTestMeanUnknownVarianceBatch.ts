@@ -4,9 +4,9 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { mastra } from '../mastra';
 
-import { generatedHypothesisTestMeanKnownVarianceCalibrationSet } from '../problem-bank/examples/hypothesisTestMeanKnownVariance/generatedCalibrationSet';
+import { generatedHypothesisTestMeanUnknownVarianceCalibrationSet } from '../problem-bank/examples/hypothesisTestMeanUnknownVariance/generatedCalibrationSet';
 
-import { generateHypothesisTestMeanKnownVarianceProblemVariantsWorkflow } from '../mastra/workflows/generateHypothesisTestMeanKnownVarianceProblemVariants.workflow';
+import { generateHypothesisTestMeanUnknownVarianceProblemVariantsWorkflow } from '../mastra/workflows/generateHypothesisTestMeanUnknownVarianceProblemVariants.workflow';
 async function main() {
   const outputDirectory = 'outputs';
 
@@ -15,12 +15,12 @@ async function main() {
   });
 
   const selectedProblems =
-    generatedHypothesisTestMeanKnownVarianceCalibrationSet.filter(
-      (_problem, index) => index % 7 === 0,
+    generatedHypothesisTestMeanUnknownVarianceCalibrationSet.filter(
+      (_problem, index) => index % 8 === 0,
     );
 
   const workflow =
-    generateHypothesisTestMeanKnownVarianceProblemVariantsWorkflow;
+    generateHypothesisTestMeanUnknownVarianceProblemVariantsWorkflow;
 
   const results = [];
 
@@ -44,7 +44,7 @@ async function main() {
 
   const outputPath = join(
     outputDirectory,
-    'hypothesis-test-mean-known-variance-batch-results-every-7th.json',
+    'hypothesis-test-mean-unknown-variance-batch-results-every-8th.json',
   );
 
   writeFileSync(outputPath, JSON.stringify(results, null, 2));

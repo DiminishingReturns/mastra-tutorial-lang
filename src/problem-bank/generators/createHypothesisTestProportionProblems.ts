@@ -14,6 +14,8 @@ type CreateHypothesisTestProportionProblemOptions = {
   nullClaimValue?: number;
   sampleSize?: number;
   successCount?: number;
+  expectedDecision?: 'reject-null' | 'fail-to-reject-null';
+  evidenceStrength?: 'strong' | 'borderline' | 'weak';
 };
 
 function roundTo(value: number, digits: number): number {
@@ -142,6 +144,102 @@ function buildRequiredTasks(
   }
 }
 
+function getApproximateCriticalZ({
+  questionType,
+  significanceLevel,
+}: {
+  questionType: HypothesisTestProportionQuestionType;
+  significanceLevel: number;
+}): number {
+  const alpha = significanceLevel;
+
+  if (questionType === 'two-tailed') {
+    if (alpha === 0.1) return 1.645;
+    if (alpha === 0.05) return 1.96;
+    if (alpha === 0.02) return 2.054;
+    if (alpha === 0.01) return 2.575;
+    if (alpha === 0.005) return 3.291;
+  }
+
+  if (questionType === 'left-tailed' || questionType === 'right-tailed') {
+    if (alpha === 0.1) return 1.282;
+    if (alpha === 0.05) return 1.645;
+    if (alpha === 0.025) return 1.96;
+    if (alpha === 0.01) return 2.326;
+    if (alpha === 0.005) return 2.575;
+  }
+
+  return questionType === 'two-tailed' ? 1.96 : 1.645;
+}
+
+function chooseSuccessCountForExpectedDecision({
+  questionType,
+  expectedDecision,
+  evidenceStrength = 'strong',
+  nullClaimValue,
+  sampleSize,
+  significanceLevel,
+}: {
+  questionType: HypothesisTestProportionQuestionType;
+  expectedDecision: 'reject-null' | 'fail-to-reject-null';
+  evidenceStrength?: 'strong' | 'borderline' | 'weak';
+  nullClaimValue: number;
+  sampleSize: number;
+  significanceLevel: number;
+}): number {
+  const standardError = Math.sqrt(
+    (nullClaimValue * (1 - nullClaimValue)) / sampleSize,
+  );
+
+  const criticalZ = getApproximateCriticalZ({
+    questionType,
+    significanceLevel,
+  });
+
+  const offsetFromCritical = {
+    'reject-null': {
+      strong: 0.75,
+      borderline: 0.15,
+      weak: 0.35,
+    },
+    'fail-to-reject-null': {
+      strong: -1.0,
+      borderline: -0.15,
+      weak: -0.5,
+    },
+  } as const;
+
+  const zMagnitude =
+    criticalZ + offsetFromCritical[expectedDecision][evidenceStrength];
+
+  let signedZ: number;
+
+  switch (questionType) {
+    case 'left-tailed':
+      signedZ = -zMagnitude;
+      break;
+
+    case 'right-tailed':
+      signedZ = zMagnitude;
+      break;
+
+    case 'two-tailed':
+      signedZ = zMagnitude;
+      break;
+  }
+
+  const targetSampleProportion = nullClaimValue + signedZ * standardError;
+
+  const boundedSampleProportion = Math.min(
+    Math.max(targetSampleProportion, 0.01),
+    0.99,
+  );
+
+  const successCount = Math.round(boundedSampleProportion * sampleSize);
+
+  return successCount;
+}
+
 export function createHypothesisTestProportionProblem(
   options: CreateHypothesisTestProportionProblemOptions,
 ): HypothesisTestProportionProblem {
@@ -166,7 +264,18 @@ export function createHypothesisTestProportionProblem(
 
   const sampleSize = options.sampleSize ?? seed.defaultSampleSize;
 
-  const successCount = options.successCount ?? seed.defaultSuccessCount;
+  const successCount =
+    options.successCount ??
+    (options.expectedDecision
+      ? chooseSuccessCountForExpectedDecision({
+          questionType: options.questionType,
+          expectedDecision: options.expectedDecision,
+          evidenceStrength: options.evidenceStrength,
+          nullClaimValue,
+          sampleSize,
+          significanceLevel,
+        })
+      : seed.defaultSuccessCount);
 
   const sampleProportion = roundTo(successCount / sampleSize, 4);
 
@@ -218,6 +327,13 @@ export function createHypothesisTestProportionProblem(
       standardErrorFormula: 'sqrt(p0(1-p0)/n)',
       pValueDirection: getPValueDirection(options.questionType),
     },
+
+    solutionMetadata: options.expectedDecision
+      ? {
+          expectedDecision: options.expectedDecision,
+          evidenceStrength: options.evidenceStrength ?? 'strong',
+        }
+      : undefined,
 
     learningGoals: [
       'Identify the population proportion as the parameter being tested.',

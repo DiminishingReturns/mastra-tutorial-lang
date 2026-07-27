@@ -16,7 +16,7 @@ async function main() {
 
   const selectedProblems =
     generatedConfidenceIntervalMeanUnknownVarianceCalibrationSet.filter(
-      (_problem, index) => index % 6 === 0,
+      (_problem, index) => index % 7 === 0,
     );
 
   const workflow =
@@ -44,7 +44,7 @@ async function main() {
 
   const outputPath = join(
     outputDirectory,
-    'confidence-interval-mean-unknown-variance-batch-results-every-6th.json',
+    'confidence-interval-mean-unknown-variance-batch-results-every-7th.json',
   );
 
   writeFileSync(outputPath, JSON.stringify(results, null, 2));

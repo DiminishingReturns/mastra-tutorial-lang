@@ -13,11 +13,16 @@ async function main() {
     recursive: true,
   });
 
+  const selectedProblems =
+    generatedHypothesisTestProportionCalibrationSet.filter(
+      (_problem, index) => index % 7 === 0,
+    );
+
   const workflow = generateHypothesisTestProportionProblemVariantsWorkflow;
 
   const results = [];
 
-  for (const problem of generatedHypothesisTestProportionCalibrationSet) {
+  for (const problem of selectedProblems) {
     console.log(`Running workflow for ${problem.id}...`);
 
     const run = await workflow.createRun();
@@ -37,7 +42,7 @@ async function main() {
 
   const outputPath = join(
     outputDirectory,
-    'hypothesis-test-proportion-batch-results.json',
+    'hypothesis-test-proportion-batch-results-every-7th.json',
   );
 
   writeFileSync(outputPath, JSON.stringify(results, null, 2));
