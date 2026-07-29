@@ -9,6 +9,7 @@ import { readabilityTargetTool } from './tools/readabilityTarget.tool';
 //
 //
 import { generateBinomialProblemVariantsWorkflow } from './workflows/generateBinomialProblemVariants.workflow';
+import { generateDiscreteRandomVariableProblemVariantsWorkflow } from './workflows/generateDiscreteRandomVariableVariants.workflow';
 
 import { generateNormalApproximationBinomialProblemVariantsWorkflow } from './workflows/generateNormalApproximationBinomialProblemVariants.workflow';
 
@@ -26,6 +27,8 @@ import { generateHypothesisTestMeanUnknownVarianceProblemVariantsWorkflow } from
 
 import { generateHypothesisTestProportionProblemVariantsWorkflow } from './workflows/generateHypothesisTestProportionProblemVariants.workflow';
 
+import { generateProbabilityRulesProblemVariantsWorkflow } from './workflows/generateProbabilityRulesProblemVariants.workflow';
+
 export const mastra = new Mastra({
   agents: {
     languageVariantAgent,
@@ -35,7 +38,9 @@ export const mastra = new Mastra({
 
   workflows: {
     generateNormalProblemVariantsWorkflow,
+    generateDiscreteRandomVariableProblemVariantsWorkflow,
     generateBinomialProblemVariantsWorkflow,
+    generateProbabilityRulesProblemVariantsWorkflow,
     generateNormalApproximationBinomialProblemVariantsWorkflow,
     generateCentralLimitTheoremProblemVariantsWorkflow,
     generateConfidenceIntervalMeanKnownVarianceProblemVariantsWorkflow,
