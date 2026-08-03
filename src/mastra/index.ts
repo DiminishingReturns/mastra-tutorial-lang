@@ -1,6 +1,7 @@
 import { Mastra } from '@mastra/core';
 
 import { languageVariantAgent } from './agents/languageVariantAgent';
+import { countingTechniquesLanguageVariantAgent } from './agents/countingTechniquesLanguageVariantAgent';
 import { generateNormalProblemVariantsWorkflow } from './workflows/generateNormalProblemVariants.workflow';
 import { mathInvariantAgent } from './agents/mathInvariantAgent';
 import { registerEvaluatorAgent } from './agents/registerEvaluatorAgent';
@@ -28,16 +29,19 @@ import { generateHypothesisTestMeanUnknownVarianceProblemVariantsWorkflow } from
 import { generateHypothesisTestProportionProblemVariantsWorkflow } from './workflows/generateHypothesisTestProportionProblemVariants.workflow';
 
 import { generateProbabilityRulesProblemVariantsWorkflow } from './workflows/generateProbabilityRulesProblemVariants.workflow';
+import { generateCountingTechniquesProblemVariantsWorkflow } from './workflows/generateCountingTechniquesProblemVariants.workflow';
 
 export const mastra = new Mastra({
   agents: {
     languageVariantAgent,
     mathInvariantAgent,
     registerEvaluatorAgent,
+    countingTechniquesLanguageVariantAgent,
   },
 
   workflows: {
     generateNormalProblemVariantsWorkflow,
+    generateCountingTechniquesProblemVariantsWorkflow,
     generateDiscreteRandomVariableProblemVariantsWorkflow,
     generateBinomialProblemVariantsWorkflow,
     generateProbabilityRulesProblemVariantsWorkflow,

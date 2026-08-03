@@ -206,7 +206,7 @@ export const discreteRandomVariableContextSeeds: DiscreteRandomVariableContextSe
     },
 
     {
-      id: '',
+      id: 'hubei-cigarettes',
 
       seedPhrase:
         'After the 2008 financial crisis, the Hubei province in China tried to boost the local economy by ordering their police officers and teachers to buy packets of cigarettes or face a fine.',
@@ -312,136 +312,199 @@ export const discreteRandomVariableContextSeeds: DiscreteRandomVariableContextSe
 
       defaultQuestionType: 'compute-expected-value',
     },
-    // {
-    //   id: '',
+    {
+      id: 'waiter-race',
 
-    //   setting: '',
+      setting:
+        'Competitors in the annual Soho Waiters’ Race must carry a tray with a bottle of champagne, a glass and an ashtray in one hand while they run. The rules state participants must look `fantastic`. The number of items dropped by a randomly selected competitor during the race is a discrete random variable.',
 
-    //   randomVariableDescription: '',
+      randomVariableDescription:
+        'number of items dropped by a randomly selected competitor during the race',
 
-    //   valuesRepresent: '',
+      valuesRepresent:
+        '0, 1, 2, ... items dropped by a competitor during the race',
 
-    //   unit: '',
+      unit: 'items dropped',
 
-    //   populationOrProcess: '',
+      populationOrProcess: 'items dropped by competitors during the race',
 
-    //   probabilityTable: [],
+      probabilityTable: [
+        { value: 0, probability: 0.1 },
+        { value: 1, probability: 0.15 },
+        { value: 2, probability: 0.3 },
+        { value: 3, probability: 0.45 },
+      ],
 
-    //   distributionPresentation: {
-    //     format: 'verbal',
-    //     verbalDescription: '',
-    //   },
+      distributionPresentation: {
+        format: 'table',
+        verbalDescription:
+          'The probability that a randomly selected competitor drops a certain number of items during the race is given by the probability table. The number of items dropped by a randomly selected competitor is a discrete random variable. ',
+      },
 
-    //   defaultQuestionType: '',
-    // },
-    // {
-    //   id: '',
+      defaultQuestionType: 'compute-expected-value',
+    },
+    {
+      id: 'spanish-ovens',
 
-    //   setting: '',
+      setting:
+        'The world’s oldest restaurant, Restaurante Botín in Madrid, has used the same oven since it opened in 1725.  A factory in Spain produces the heating elements for the oven, and the factory has determined that the probability that heating element will not pass inspection is 0.05.  Suppose that four heating elements are selected at random.',
 
-    //   randomVariableDescription: '',
+      randomVariableDescription:
+        'number of heating elements that will not pass inspection',
 
-    //   valuesRepresent: '',
+      valuesRepresent:
+        '0, 1, 2, 3, 4 heating elements that will not pass inspection',
 
-    //   unit: '',
+      unit: 'heating elements',
 
-    //   populationOrProcess: '',
+      populationOrProcess: 'heating elements selected for inspection',
 
-    //   probabilityTable: [],
+      probabilityTable: [
+        { value: 0, probability: (1 - 0.05) ** 4 },
+        { value: 1, probability: 4 * 0.05 * (1 - 0.05) ** 3 },
+        { value: 2, probability: 6 * 0.05 ** 2 * (1 - 0.05) ** 2 },
+        { value: 3, probability: 4 * 0.05 ** 3 * (1 - 0.05) },
+        { value: 4, probability: 0.05 ** 4 },
+      ],
 
-    //   distributionPresentation: {
-    //     format: 'verbal',
-    //     verbalDescription: '',
-    //   },
+      distributionPresentation: {
+        format: 'verbal',
+        verbalDescription:
+          'The probability that a certain number of heating elements will not pass inspection is given by the probability table. The number of heating elements that will not pass inspection is a discrete random variable.',
+      },
 
-    //   defaultQuestionType: '',
-    // },
-    // {
-    //   id: '',
+      defaultQuestionType: 'compute-expected-value',
+    },
+    {
+      id: 'ai-robotics',
 
-    //   setting: '',
+      setting:
+        'Facebook AI devices starting talking to each other in a new language that no human could understand. The devices were promptly turned off.  Consider two robots that are programmed learning a new language.  The probability that the first robot creates a language that humans cannot understand is 0.90.  The probability that the second robot creates a language that humans cannot understand is 0.80.  Suppose that the two robots are programmed to learn independently of each other.',
 
-    //   randomVariableDescription: '',
+      randomVariableDescription:
+        'number of robots that create a language that humans cannot understand',
 
-    //   valuesRepresent: '',
+      valuesRepresent:
+        '0, 1, 2 robots that create a language that humans cannot understand',
 
-    //   unit: '',
+      unit: 'robots',
 
-    //   populationOrProcess: '',
+      populationOrProcess: 'robots programmed to learn a new language',
 
-    //   probabilityTable: [],
+      probabilityTable: [
+        { value: 0, probability: (1 - 0.9) * (1 - 0.8) },
+        { value: 1, probability: 0.9 * (1 - 0.8) + (1 - 0.9) * 0.8 },
+        { value: 2, probability: 0.9 * 0.8 },
+      ],
 
-    //   distributionPresentation: {
-    //     format: 'verbal',
-    //     verbalDescription: '',
-    //   },
+      distributionPresentation: {
+        format: 'verbal',
+        verbalDescription:
+          'Let R1 be the event that the first robot creates a language that humans cannot understand, and let R2 be the event that the second robot creates a language that humans cannot understand. Generate the probability distribution for the number of robots that create a language that humans cannot understand. ',
+      },
 
-    //   defaultQuestionType: '',
-    // },
-    // {
-    //   id: '',
+      defaultQuestionType: 'compute-expected-value',
+    },
+    {
+      id: 'snake-bites',
 
-    //   setting: '',
+      setting:
+        'A study of venomous snakebites in the US has shown that most of the people bitten were deliberately interacting with snakes and 90% of those were men.  Suppose that 3 people are bitten by venomous snakes, and that the bites are independent of each other.',
 
-    //   randomVariableDescription: '',
+      randomVariableDescription: 'number of men bitten by venomous snakes',
 
-    //   valuesRepresent: '',
+      valuesRepresent: '0, 1, 2, 3 men bitten by venomous snakes',
 
-    //   unit: '',
+      unit: 'men',
 
-    //   populationOrProcess: '',
+      populationOrProcess: 'people bitten by venomous snakes',
 
-    //   probabilityTable: [],
+      probabilityTable: [
+        { value: 0, probability: (1 - 0.9) ** 3 },
+        { value: 1, probability: 3 * 0.9 * (1 - 0.9) ** 2 },
+        { value: 2, probability: 3 * 0.9 ** 2 * (1 - 0.9) },
+        { value: 3, probability: 0.9 ** 3 },
+      ],
 
-    //   distributionPresentation: {
-    //     format: 'verbal',
-    //     verbalDescription: '',
-    //   },
+      distributionPresentation: {
+        format: 'verbal',
+        verbalDescription:
+          'The probability that a certain number of men are bitten by venomous snakes is given by the probability table. The number of men bitten by venomous snakes is a discrete random variable.',
+      },
 
-    //   defaultQuestionType: '',
-    // },
-    // {
-    //   id: '',
+      defaultQuestionType: 'compute-expected-value',
+    },
+    {
+      id: 'ai-chatbots',
 
-    //   setting: '',
+      setting:
+        'AI chatbots are better than humans at convincing conspiracy theorists that their beliefs are not true. Suppose that there are three robots that are programmed to convince conspiracy theorists that their beliefs are not true.  The probability that the first bot convinces a conspiracy theorist is 0.90.  The probability that the second bot convinces a conspiracy theorist is 0.80.  The probability that the third bot convinces a conspiracy theorist is 0.70.  Suppose that the three bots are programmed to work independently of each other.',
 
-    //   randomVariableDescription: '',
+      randomVariableDescription:
+        'number of conspiracy theorists convinced by the AI chatbots',
 
-    //   valuesRepresent: '',
+      valuesRepresent:
+        '0, 1, 2, 3 conspiracy theorists convinced by the AI chatbots',
 
-    //   unit: '',
+      unit: 'conspiracy theorists',
 
-    //   populationOrProcess: '',
+      populationOrProcess:
+        'conspiracy theorists interacting with the AI chatbots',
 
-    //   probabilityTable: [],
+      probabilityTable: [
+        { value: 0, probability: (1 - 0.9) * (1 - 0.8) * (1 - 0.7) },
+        {
+          value: 1,
+          probability:
+            0.9 * (1 - 0.8) * (1 - 0.7) +
+            (1 - 0.9) * 0.8 * (1 - 0.7) +
+            (1 - 0.9) * (1 - 0.8) * 0.7,
+        },
+        {
+          value: 2,
+          probability:
+            0.9 * 0.8 * (1 - 0.7) +
+            0.9 * (1 - 0.8) * 0.7 +
+            (1 - 0.9) * 0.8 * 0.7,
+        },
+        { value: 3, probability: 0.9 * 0.8 * 0.7 },
+      ],
 
-    //   distributionPresentation: {
-    //     format: 'verbal',
-    //     verbalDescription: '',
-    //   },
+      distributionPresentation: {
+        format: 'verbal',
+        verbalDescription:
+          'Generate the probability distribution for the number of conspiracy theorists convinced by the AI chatbots. The number of conspiracy theorists convinced by the AI chatbots is a discrete random variable.',
+      },
 
-    //   defaultQuestionType: '',
-    // },
-    // {
-    //   id: '',
+      defaultQuestionType: 'compute-expected-value',
+    },
+    {
+      id: 'emails-per-day',
 
-    //   setting: '',
+      setting:
+        'Suppose that the number of emails a person receives per day follows a certain distribution.',
 
-    //   randomVariableDescription: '',
+      randomVariableDescription: 'number of emails received per day',
 
-    //   valuesRepresent: '',
+      valuesRepresent: '0, 1, 2, ... emails received per day',
 
-    //   unit: '',
+      unit: 'emails',
 
-    //   populationOrProcess: '',
+      populationOrProcess: 'emails received by a person per day',
 
-    //   probabilityTable: [],
+      probabilityTable: [
+        { value: 10, probability: 0.1 },
+        { value: 15, probability: 0.2 },
+        { value: 20, probability: 0.3 },
+        { value: 35, probability: 0.4 },
+      ],
 
-    //   distributionPresentation: {
-    //     format: 'verbal',
-    //     verbalDescription: '',
-    //   },
+      distributionPresentation: {
+        format: 'verbal',
+        verbalDescription:
+          'The probability that a person receives a certain number of emails per day is given by the probability table. The number of emails received per day is a discrete random variable.',
+      },
 
-    //   defaultQuestionType: '',
-    // },
+      defaultQuestionType: 'compute-expected-value',
+    },
   ];
