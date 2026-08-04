@@ -2,7 +2,7 @@ import { Agent } from '@mastra/core/agent';
 
 export const binomialDistributionFrenchLanguageVariantAgent = new Agent({
   id: 'binomial-distribution-french-language-variant-agent',
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6',
   name: 'Binomial Distribution French Language Variant Agent',
 
   instructions: `

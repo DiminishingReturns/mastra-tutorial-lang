@@ -3,7 +3,7 @@ import { Agent } from '@mastra/core/agent';
 export const probabilityRulesFrenchLanguageVariantAgent = new Agent({
   id: 'probability-rules-french-language-variant-agent',
   name: 'Probability Rules French Language Variant Agent',
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6',
 
   instructions: `
 Tu génères trois variantes en français d’un même problème sur les règles de probabilité.

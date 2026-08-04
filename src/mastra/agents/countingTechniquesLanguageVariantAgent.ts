@@ -4,7 +4,7 @@ export const countingTechniquesLanguageVariantAgent = new Agent({
   id: 'counting-techniques-language-variant-agent',
   name: 'Language Variant Agent',
 
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6',
 
   instructions: `
 You generate three language-register variants of the same counting techniques problem.

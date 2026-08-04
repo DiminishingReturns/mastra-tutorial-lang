@@ -4,7 +4,7 @@ export const countingTechniquesFrenchLanguageVariantAgent = new Agent({
   id: 'counting-techniques-french-language-variant-agent',
 
   name: 'Counting Techniques French Language Variant Agent',
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6',
 
   instructions: `
 Tu génères trois variantes en français d’un même problème de dénombrement.

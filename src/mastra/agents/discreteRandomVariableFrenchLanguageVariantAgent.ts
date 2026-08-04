@@ -3,7 +3,7 @@ import { Agent } from '@mastra/core/agent';
 export const discreteRandomVariableFrenchLanguageVariantAgent = new Agent({
   id: 'discrete-random-variable-french-language-variant-agent',
   name: 'Discrete Random Variable French Language Variant Agent',
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6',
 
   instructions: `
 Tu génères trois variantes en français d’un même problème sur les variables aléatoires discrètes.

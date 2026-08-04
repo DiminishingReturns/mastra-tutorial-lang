@@ -4,7 +4,7 @@ export const normalDistributionFrenchLanguageVariantAgent = new Agent({
   id: 'normal-distribution-french-language-variant-agent',
 
   name: 'Normal Distribution French Language Variant Agent',
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6',
 
   instructions: `
 Tu génères trois variantes en français d’un même problème sur la loi normale.

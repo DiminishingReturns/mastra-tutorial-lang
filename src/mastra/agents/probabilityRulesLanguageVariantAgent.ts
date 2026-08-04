@@ -3,7 +3,7 @@ import { Agent } from '@mastra/core/agent';
 export const probabilityRulesLanguageVariantAgent = new Agent({
   id: 'probability-rules-language-variant-agent',
   name: 'Language Variant Agent',
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-5.6',
 
   instructions: `
 You generate three language-register variants of the same probability rules problem.
