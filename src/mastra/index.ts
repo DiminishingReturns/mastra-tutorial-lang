@@ -2,15 +2,22 @@ import { Mastra } from '@mastra/core';
 
 import { languageVariantAgent } from './agents/languageVariantAgent';
 import { countingTechniquesLanguageVariantAgent } from './agents/countingTechniquesLanguageVariantAgent';
-import { generateNormalProblemVariantsWorkflow } from './workflows/generateNormalProblemVariants.workflow';
+
 import { mathInvariantAgent } from './agents/mathInvariantAgent';
 import { registerEvaluatorAgent } from './agents/registerEvaluatorAgent';
 import { readabilityMetricsTool } from './tools/readabilityMetrics.tool';
 import { readabilityTargetTool } from './tools/readabilityTarget.tool';
 //
 //
+
+import { generateCountingTechniquesProblemVariantsWorkflow } from './workflows/generateCountingTechniquesProblemVariants.workflow';
+import { generateProbabilityRulesProblemVariantsWorkflow } from './workflows/generateProbabilityRulesProblemVariants.workflow';
+
 import { generateBinomialProblemVariantsWorkflow } from './workflows/generateBinomialProblemVariants.workflow';
+
 import { generateDiscreteRandomVariableProblemVariantsWorkflow } from './workflows/generateDiscreteRandomVariableVariants.workflow';
+
+import { generateNormalProblemVariantsWorkflow } from './workflows/generateNormalProblemVariants.workflow';
 
 import { generateNormalApproximationBinomialProblemVariantsWorkflow } from './workflows/generateNormalApproximationBinomialProblemVariants.workflow';
 
@@ -28,8 +35,17 @@ import { generateHypothesisTestMeanUnknownVarianceProblemVariantsWorkflow } from
 
 import { generateHypothesisTestProportionProblemVariantsWorkflow } from './workflows/generateHypothesisTestProportionProblemVariants.workflow';
 
-import { generateProbabilityRulesProblemVariantsWorkflow } from './workflows/generateProbabilityRulesProblemVariants.workflow';
-import { generateCountingTechniquesProblemVariantsWorkflow } from './workflows/generateCountingTechniquesProblemVariants.workflow';
+// French variants workflows
+
+import { generateCountingTechniquesFrenchVariantsWorkflow } from './workflows/generateCountingTechniquesProblemFrenchVariants.workflow';
+
+import { generateProbabilityRulesFrenchVariantsWorkflow } from './workflows/generateProbabilityRulesProblemFrenchVariants.workflow';
+
+import { generateDiscreteRandomVariableFrenchVariantsWorkflow } from './workflows/generateDiscreteRandomVariableFrenchVariants.workflow';
+
+import { generateNormalDistributionFrenchVariantsWorkflow } from './workflows/generateNormalProblemFrenchVariants.workflow';
+
+import { generateBinomialDistributionFrenchVariantsWorkflow } from './workflows/generateBinomialProblemFrenchVariants.workflow';
 
 export const mastra = new Mastra({
   agents: {
@@ -53,6 +69,11 @@ export const mastra = new Mastra({
     generateHypothesisTestMeanKnownVarianceProblemVariantsWorkflow,
     generateHypothesisTestMeanUnknownVarianceProblemVariantsWorkflow,
     generateHypothesisTestProportionProblemVariantsWorkflow,
+    generateCountingTechniquesFrenchVariantsWorkflow,
+    generateProbabilityRulesFrenchVariantsWorkflow,
+    generateDiscreteRandomVariableFrenchVariantsWorkflow,
+    generateNormalDistributionFrenchVariantsWorkflow,
+    generateBinomialDistributionFrenchVariantsWorkflow,
   },
   tools: {
     readabilityMetricsTool,

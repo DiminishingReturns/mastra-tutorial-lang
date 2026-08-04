@@ -1,7 +1,7 @@
 import { Agent } from '@mastra/core/agent';
 
 export const discreteRandomVariableLanguageVariantAgent = new Agent({
-  id: 'binomial-language-variant-agent',
+  id: 'discrete-random-variable-language-variant-agent',
   name: 'Language Variant Agent',
   model: 'openai/gpt-5.5',
 
