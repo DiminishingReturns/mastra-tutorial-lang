@@ -47,6 +47,14 @@ import { generateNormalDistributionFrenchVariantsWorkflow } from './workflows/ge
 
 import { generateBinomialDistributionFrenchVariantsWorkflow } from './workflows/generateBinomialProblemFrenchVariants.workflow';
 
+import { generateNormalApproximationBinomialFrenchVariantsWorkflow } from './workflows/generateNormalApproximationBinomialFrenchVariants.workflow';
+
+import { generateConfidenceIntervalMeanKnownVarianceFrenchVariantsWorkflow } from './workflows/generateConfidenceIntervalMeanKnownVarianceFrenchVariants.workflow';
+
+import { generateConfidenceIntervalMeanUnknownVarianceFrenchVariantsWorkflow } from './workflows/generateConfidenceIntervalMeanUnknownVarianceFrenchVariant.workflow';
+
+import { generateConfidenceIntervalProportionFrenchVariantsWorkflow } from './workflows/generateConfidenceIntervalProportionFrenchVariants.workflow';
+
 export const mastra = new Mastra({
   agents: {
     languageVariantAgent,
@@ -74,6 +82,10 @@ export const mastra = new Mastra({
     generateDiscreteRandomVariableFrenchVariantsWorkflow,
     generateNormalDistributionFrenchVariantsWorkflow,
     generateBinomialDistributionFrenchVariantsWorkflow,
+    generateNormalApproximationBinomialFrenchVariantsWorkflow,
+    generateConfidenceIntervalMeanKnownVarianceFrenchVariantsWorkflow,
+    generateConfidenceIntervalMeanUnknownVarianceFrenchVariantsWorkflow,
+    generateConfidenceIntervalProportionFrenchVariantsWorkflow,
   },
   tools: {
     readabilityMetricsTool,
