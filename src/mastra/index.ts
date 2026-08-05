@@ -55,6 +55,12 @@ import { generateConfidenceIntervalMeanUnknownVarianceFrenchVariantsWorkflow } f
 
 import { generateConfidenceIntervalProportionFrenchVariantsWorkflow } from './workflows/generateConfidenceIntervalProportionFrenchVariants.workflow';
 
+import { generateHypothesisTestMeanKnownVarianceFrenchVariantsWorkflow } from './workflows/generateHypothesisTestMeanKnownVarianceFrenchVariants.workflow';
+
+import { generateHypothesisTestMeanUnknownVarianceFrenchVariantsWorkflow } from './workflows/generateHypothesisTestMeanUnknownVarianceFrenchVariants.workflow';
+
+import { generateHypothesisTestProportionFrenchVariantsWorkflow } from './workflows/generateHypothesisTestProportionFrenchVariants.workflow';
+
 export const mastra = new Mastra({
   agents: {
     languageVariantAgent,
@@ -86,6 +92,9 @@ export const mastra = new Mastra({
     generateConfidenceIntervalMeanKnownVarianceFrenchVariantsWorkflow,
     generateConfidenceIntervalMeanUnknownVarianceFrenchVariantsWorkflow,
     generateConfidenceIntervalProportionFrenchVariantsWorkflow,
+    generateHypothesisTestMeanKnownVarianceFrenchVariantsWorkflow,
+    generateHypothesisTestMeanUnknownVarianceFrenchVariantsWorkflow,
+    generateHypothesisTestProportionFrenchVariantsWorkflow,
   },
   tools: {
     readabilityMetricsTool,
